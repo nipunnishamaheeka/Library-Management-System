@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane fx:id="root" prefHeight="550.0" prefWidth="900.0" stylesheets="@../css/background.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.MainFormController">
+   <children>
+      <Pane prefHeight="87.0" prefWidth="900.0" styleClass="pane">
+         <children>
+            <Label layoutX="155.0" layoutY="14.0" styleClass="headline" text="Library System" />
+            <Label layoutX="155.0" layoutY="47.0" styleClass="underText" text="This is the menu of library system." />
+            <ImageView fitHeight="25.0" fitWidth="25.0" layoutX="834.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/external.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <HBox layoutX="179.0" layoutY="142.0" prefHeight="100.0" prefWidth="558.0" spacing="65.0">
+         <children>
+            <Pane fx:id="btnAddBook" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" prefHeight="100.0" prefWidth="144.0" styleClass="hBoxPane">
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="27.0" layoutY="68.0" styleClass="paneText" text="Add Book" />
+                  <ImageView fx:id="imgAddBook" fitHeight="62.0" fitWidth="59.0" layoutX="42.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/mortarboard.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="btnIssueBook" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" prefHeight="100.0" prefWidth="144.0" styleClass="hBoxPane">
+               <children>
+                  <Label layoutX="36.0" layoutY="70.0" styleClass="paneText" text="Issue Book" />
+                  <ImageView fitHeight="62.0" fitWidth="59.0" layoutX="42.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" smooth="false">
+                     <image>
+                        <Image url="@../assets/plus.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="btnAddStudent" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" prefHeight="100.0" prefWidth="144.0" styleClass="hBoxPane">
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="27.0" layoutY="68.0" styleClass="paneText" text="Add Student" />
+                  <ImageView fitHeight="62.0" fitWidth="59.0" layoutX="42.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/mortarboard.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+      <Label fx:id="lblDescription" layoutX="260.0" layoutY="445.0" text="Change Name with box " />
+      <HBox alignment="CENTER" layoutX="179.0" layoutY="292.0" prefHeight="100.0" prefWidth="558.0" spacing="65.0">
+         <children>
+            <Pane fx:id="btnReturnBook" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" prefHeight="100.0" prefWidth="144.0" styleClass="hBoxPane">
+               <children>
+                  <Label layoutX="30.0" layoutY="70.0" styleClass="paneText" text="Return Book" />
+                  <ImageView fitHeight="62.0" fitWidth="59.0" layoutX="42.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/complete.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane fx:id="btnViewStatistics" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" prefHeight="100.0" prefWidth="144.0" styleClass="hBoxPane">
+               <children>
+                  <Label layoutX="22.0" layoutY="70.0" styleClass="paneText" text="View Statistics" />
+                  <ImageView fitHeight="62.0" fitWidth="59.0" layoutX="42.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/statistics.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+      <Label fx:id="lblMenu" layoutX="260.0" layoutY="417.0" text="Label" />
+   </children>
+</AnchorPane>
