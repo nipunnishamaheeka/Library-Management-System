@@ -8,6 +8,9 @@
     -fx-font-weight: bold;
     -fx-font-family: Arial, sans-serif;
 }
+.headupPane{
+    -fx-effect: dropshadow(gaussian, #6586A3, 15, 0, 0, 0);
+}
 .underText{
     -fx-font-size: 13;
     -fx-font-weight: 50px;

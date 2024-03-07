@@ -1,0 +1,74 @@
+.mainPane{
+    -fx-background-color: rgba(14, 175, 130, 0.24);
+    -fx-text-fill: white;
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    -fx-padding: 10;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-spacing: 10;
+
+
+}
+.overViewHeader_pane{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 25;
+    -fx-border-radius: 25;
+    -fx-border-color: #ffffff;
+
+}
+.overViewHeader_pane:hover{
+    -fx-effect: dropshadow(gaussian, #6586A3, 15, 0, 0, 0);
+}
+.userPane{
+    -fx-background-color: #88cfb9;
+    -fx-text-fill: white;
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    -fx-padding: 10;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-spacing: 10;
+}
+.button{
+
+    -fx-background-color: #0eaf82;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial, sans-serif;
+
+    -fx-background-radius: 2;
+    -fx-border-radius: 2;
+    -fx-padding: 10;
+}
+.button-side{
+    -fx-background-color: #0eaf82;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial, sans-serif;
+    -fx-border-color: white;
+    -fx-border-width: 0.5;
+    -fx-background-radius: 2;
+    -fx-border-radius: 2;
+    -fx-padding: 10;
+}
+.paneText{
+    -fx-font-size: 15;
+    -fx-font-family: Arial, sans-serif;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4b4b4b;
+}
+.paneText:hover{
+    -fx-font-size: 13;
+    -fx-font-family: Arial, sans-serif;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0eaf82;
+}
+.paneUnderText{
+    -fx-font-size: 16;
+    -fx-font-family: Arial, sans-serif;
+    -fx-font-weight: 50px;
+    -fx-text-fill: #000000;
+}

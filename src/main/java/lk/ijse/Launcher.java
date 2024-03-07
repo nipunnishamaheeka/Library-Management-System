@@ -4,6 +4,8 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import lk.ijse.util.SessionFactoryConfig;
+import org.hibernate.Session;
 
 import java.io.IOException;
 
@@ -13,14 +15,17 @@ public class Launcher extends Application {
         launch(args);
     }
 
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Launcher.class.getResource("/view/mainFrom.fxml"));
+        public void start(Stage stage) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Launcher.class.getResource("/view/adminNavigationFrom.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Manage Form");
         stage.setResizable(false);
         stage.setScene(scene);
         stage.centerOnScreen();
-        stage.show();
+
+
+            Session session = SessionFactoryConfig.getInstance().getSession();
+
+            stage.show();
     }
 }

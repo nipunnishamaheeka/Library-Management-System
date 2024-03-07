@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="770.0" prefWidth="1190.0" stylesheets="@../css/bookManagement.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.BookManagementFormController">
+   <children>
+      <Pane prefHeight="770.0" prefWidth="1190.0" styleClass="mainPane">
+         <children>
+            <Label layoutX="40.0" layoutY="30.0" styleClass="bookManagementText" text="Book Mangement" />
+            <VBox layoutX="14.0" layoutY="78.0" prefHeight="687.0" prefWidth="1165.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="121.0" text="Added">
+                     <font>
+                        <Font name="Berlin Sans FB" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <ScrollPane prefHeight="250.0" prefWidth="200.0" style="-fx-background-color: transparent;" stylesheets="@../css/bookManagement.css">
+                     <content>
+                        <HBox fx:id="cardLayout" prefHeight="226.0" prefWidth="1127.0" spacing="15.0" style="-fx-background-color: #0EAF823D;" stylesheets="@../css/bookManagement.css">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </HBox>
+                     </content>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </ScrollPane>
+                  <Label prefWidth="121.0" text="Recomended You">
+                     <font>
+                        <Font name="Berlin Sans FB" size="16.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+                     <content>
+                        <GridPane fx:id="bookContainer" prefHeight="0.0" prefWidth="0.0">
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

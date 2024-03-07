@@ -1,0 +1,25 @@
+.mainPane{
+    -fx-background-color: rgba(14, 175, 130, 0.24);
+    -fx-text-fill: white;
+    -fx-padding: 10;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-spacing: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0), 100, 0, 0, 100);
+
+}
+.bookManagementText{
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+}
+.transparent{
+    -fx-background-color: rgba(0,0,0,0);
+}
+.roundLayout{
+    -fx-border-radius: 50;
+}
+.drop-shadow {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0), 10, 0, 0, 10);
+}
+
+

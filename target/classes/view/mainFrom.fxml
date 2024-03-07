@@ -54,7 +54,7 @@
             </Pane>
          </children>
       </HBox>
-      <Label fx:id="lblDescription" layoutX="260.0" layoutY="445.0" text="Change Name with box " />
+      <Label fx:id="lblDescription" layoutX="273.0" layoutY="448.0" styleClass="menu-discription" text="Change Name with box " />
       <HBox alignment="CENTER" layoutX="179.0" layoutY="292.0" prefHeight="100.0" prefWidth="558.0" spacing="65.0">
          <children>
             <Pane fx:id="btnReturnBook" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" prefHeight="100.0" prefWidth="144.0" styleClass="hBoxPane">
@@ -79,6 +79,6 @@
             </Pane>
          </children>
       </HBox>
-      <Label fx:id="lblMenu" layoutX="260.0" layoutY="417.0" text="Label" />
+      <Label fx:id="lblMenu" layoutX="260.0" layoutY="417.0" styleClass="menu" text="Label" />
    </children>
 </AnchorPane>

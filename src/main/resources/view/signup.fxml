@@ -12,97 +12,101 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="550.0" prefWidth="900" stylesheets="@../css/loggin.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.SignUpFormController">
+<AnchorPane fx:id="SignUpPane" prefHeight="800.0" prefWidth="1300.0" stylesheets="@../css/loggin.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.SignUpFormController">
    <children>
-      <Pane prefHeight="550.0" prefWidth="361.0" styleClass="sidePane">
+      <Pane layoutX="200.0" layoutY="125.0">
          <children>
-            <Label layoutX="64.0" layoutY="87.0" styleClass="cursive" text="Welcome Back !" textFill="WHITE" wrapText="true">
-               <font>
-                  <Font name="ATROX normal" size="39.0" />
-               </font>
-            </Label>
-            <Label layoutX="110.0" layoutY="138.0" text="To Stay Connected with us" textFill="#ffffffee" />
-            <Label layoutX="83.0" layoutY="155.0" text=" please login with your personal info " textFill="#ffffffee" />
-            <JFXButton layoutX="77.0" layoutY="218.0" prefHeight="36.0" prefWidth="207.0" styleClass="button-side" text="Log In" />
-         </children>
-      </Pane>
-      <Pane layoutX="361.0" prefHeight="550.0" prefWidth="539.0">
-         <children>
-            <VBox layoutX="117.0" layoutY="77.0" prefHeight="101.0" prefWidth="306.0" spacing="5.0">
+            <Pane prefHeight="550.0" prefWidth="361.0" styleClass="sidePane">
                <children>
-                  <Label styleClass="signup" text="Sign Up" />
-                  <Label styleClass="underText" text="Hay! Enter Your Details to Sign into your an account." />
+                  <Label layoutX="64.0" layoutY="87.0" styleClass="cursive" text="Welcome Back !" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="ATROX normal" size="39.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="110.0" layoutY="138.0" text="To Stay Connected with us" textFill="#ffffffee" />
+                  <Label layoutX="83.0" layoutY="155.0" text=" please login with your personal info " textFill="#ffffffee" />
+                  <JFXButton fx:id="btnLogin" layoutX="77.0" layoutY="218.0" onAction="#btnLoginOnAction" prefHeight="36.0" prefWidth="207.0" styleClass="button-side" text="Log In" />
                </children>
-            </VBox>
-            <VBox layoutX="117.0" layoutY="178.0" prefHeight="200.0" prefWidth="305.0" spacing="20.0">
+            </Pane>
+            <Pane layoutX="361.0" prefHeight="550.0" prefWidth="539.0" style="-fx-border-color: #0eaf82;">
                <children>
-                  <Pane prefHeight="45.0" prefWidth="305.0" styleClass="fillPane">
+                  <VBox layoutX="117.0" layoutY="77.0" prefHeight="101.0" prefWidth="306.0" spacing="5.0">
                      <children>
-                        <HBox prefHeight="45.0" prefWidth="305.0">
-                           <children>
-                              <Pane prefHeight="45.0" prefWidth="45.0" styleClass="fillPane-Inter">
-                                 <children>
-                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" smooth="false" translateX="9.0" translateY="10.0">
-                                       <image>
-                                          <Image url="@../assets/user%20(1).png" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </Pane>
-                              <TextField prefHeight="46.0" prefWidth="263.0" promptText="User name" styleClass="mfx-text-field">
-                                 <font>
-                                    <Font name="Arial" size="14.0" />
-                                 </font>
-                              </TextField>
-                           </children>
-                        </HBox>
+                        <Label styleClass="signup" text="Sign Up" />
+                        <Label styleClass="underText" text="Hay! Enter Your Details to Sign into your an account." />
                      </children>
-                  </Pane>
-                  <Pane prefHeight="45.0" prefWidth="305.0" styleClass="fillPane">
+                  </VBox>
+                  <VBox layoutX="117.0" layoutY="178.0" prefHeight="200.0" prefWidth="305.0" spacing="20.0">
                      <children>
-                        <HBox prefHeight="45.0" prefWidth="305.0">
+                        <Pane prefHeight="45.0" prefWidth="305.0" styleClass="fillPane">
                            <children>
-                              <Pane prefHeight="45.0" prefWidth="45.0" styleClass="fillPane-Inter">
+                              <HBox prefHeight="45.0" prefWidth="305.0">
                                  <children>
-                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" smooth="false" translateX="9.0" translateY="10.0">
-                                       <image>
-                                          <Image url="@../assets/mail.png" />
-                                       </image>
-                                    </ImageView>
+                                    <Pane prefHeight="45.0" prefWidth="45.0" styleClass="fillPane-Inter">
+                                       <children>
+                                          <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" smooth="false" translateX="9.0" translateY="10.0">
+                                             <image>
+                                                <Image url="@../assets/user%20(1).png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <TextField prefHeight="46.0" prefWidth="263.0" promptText="User name" styleClass="mfx-text-field">
+                                       <font>
+                                          <Font name="Arial" size="14.0" />
+                                       </font>
+                                    </TextField>
                                  </children>
-                              </Pane>
-                              <TextField prefHeight="46.0" prefWidth="263.0" promptText="Email" styleClass="mfx-text-field">
-                                 <font>
-                                    <Font name="Arial" size="14.0" />
-                                 </font>
-                              </TextField>
+                              </HBox>
                            </children>
-                        </HBox>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="45.0" prefWidth="305.0" styleClass="fillPane">
-                     <children>
-                        <HBox prefHeight="45.0" prefWidth="305.0">
+                        </Pane>
+                        <Pane prefHeight="45.0" prefWidth="305.0" styleClass="fillPane">
                            <children>
-                              <Pane prefHeight="45.0" prefWidth="45.0" styleClass="fillPane-Inter">
+                              <HBox prefHeight="45.0" prefWidth="305.0">
                                  <children>
-                                    <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" smooth="false" translateX="9.0" translateY="10.0">
-                                       <image>
-                                          <Image url="@../assets/padlock.png" />
-                                       </image>
-                                    </ImageView>
+                                    <Pane prefHeight="45.0" prefWidth="45.0" styleClass="fillPane-Inter">
+                                       <children>
+                                          <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" smooth="false" translateX="9.0" translateY="10.0">
+                                             <image>
+                                                <Image url="@../assets/mail.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <TextField prefHeight="46.0" prefWidth="263.0" promptText="Email" styleClass="mfx-text-field">
+                                       <font>
+                                          <Font name="Arial" size="14.0" />
+                                       </font>
+                                    </TextField>
                                  </children>
-                              </Pane>
-                              <PasswordField prefHeight="46.0" prefWidth="263.0" promptText="Password" styleClass="mfx-text-field" />
+                              </HBox>
                            </children>
-                        </HBox>
+                        </Pane>
+                        <Pane prefHeight="45.0" prefWidth="305.0" styleClass="fillPane">
+                           <children>
+                              <HBox prefHeight="45.0" prefWidth="305.0">
+                                 <children>
+                                    <Pane prefHeight="45.0" prefWidth="45.0" styleClass="fillPane-Inter">
+                                       <children>
+                                          <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" smooth="false" translateX="9.0" translateY="10.0">
+                                             <image>
+                                                <Image url="@../assets/padlock.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </Pane>
+                                    <PasswordField prefHeight="46.0" prefWidth="263.0" promptText="Password" styleClass="mfx-text-field" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </Pane>
                      </children>
-                  </Pane>
+                  </VBox>
+                  <JFXButton layoutX="166.0" layoutY="412.0" prefHeight="36.0" prefWidth="207.0" text="Sign Up" />
+                  <Label layoutX="117.0" layoutY="369.0" text="Enter Your" />
+                  <Label layoutX="117.0" layoutY="456.0" text="Forgot Your Password?" />
                </children>
-            </VBox>
-            <JFXButton layoutX="166.0" layoutY="412.0" prefHeight="36.0" prefWidth="207.0" text="Sign Up" />
-            <Label layoutX="117.0" layoutY="369.0" text="Enter Your" />
-            <Label layoutX="117.0" layoutY="456.0" text="Forgot Your Password?" />
+            </Pane>
          </children>
       </Pane>
    </children>

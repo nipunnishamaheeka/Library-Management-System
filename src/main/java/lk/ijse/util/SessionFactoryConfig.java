@@ -1,6 +1,5 @@
 package lk.ijse.util;
 
-import lk.ijse.entity.AddBook;
 import lombok.SneakyThrows;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -19,7 +18,7 @@ public class SessionFactoryConfig {
 
     private SessionFactoryConfig(){
         StandardServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().loadProperties("hibernate.properties").build();
-        Metadata metadata = new MetadataSources(serviceRegistry).addAnnotatedClass(AddBook.class).getMetadataBuilder().build();
+        Metadata metadata = new MetadataSources(serviceRegistry).getMetadataBuilder().build();
         sessionFactory = metadata.buildSessionFactory();
     }
 
