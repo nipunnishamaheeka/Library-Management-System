@@ -52,4 +52,21 @@ public class AdminNavigationFormController {
         Navigation.onTheTopNavigation(navigationPane, "adminOverViewForm.fxml");
 
     }
+
+    public void btnUserOnAction(MouseEvent event) {
+        navigationPane.getChildren().clear();
+        Navigation.onTheTopNavigation(navigationPane, "adminUserManagementFrom.fxml");
+    }
+
+    public void btnLogoutOnAction(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(this.getClass().getResource("/view/loginFrom.fxml"));
+            Scene scene = new Scene(root);
+            Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

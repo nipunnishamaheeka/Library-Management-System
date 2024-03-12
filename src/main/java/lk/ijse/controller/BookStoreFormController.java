@@ -8,7 +8,6 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import lk.ijse.entity.Book;
-import org.hibernate.sql.results.graph.Initializer;
 
 import java.io.IOException;
 import java.net.URL;
@@ -16,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class BookManagementFormController implements Initializable {
+public class BookStoreFormController implements Initializable {
     @FXML
     private HBox cardLayout;
     @FXML

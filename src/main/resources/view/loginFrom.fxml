@@ -51,11 +51,7 @@
                                           </ImageView>
                                        </children>
                                     </Pane>
-                                    <TextField prefHeight="46.0" prefWidth="263.0" promptText="User name" styleClass="mfx-text-field">
-                                       <font>
-                                          <Font name="Arial" size="14.0" />
-                                       </font>
-                                    </TextField>
+                                    <TextField prefHeight="46.0" prefWidth="263.0" promptText="User name" styleClass="mfx-text-field" />
                                  </children>
                               </HBox>
                            </children>

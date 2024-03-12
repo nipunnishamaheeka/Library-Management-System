@@ -24,14 +24,16 @@
 .fillPane-Inter{
     -fx-background-color:  #0eaf82;
 }
+
 /* style.css */
 
 .mfx-text-field {
+    -fx-prompt-text-fill: black;
     -fx-background-color: #88cfb9;
     -fx-text-fill: black;
     -fx-border-color: transparent; /* Remove border */
     -fx-border-radius: 0; /* Remove border radius */
-    /* Add any other necessary styling properties */
+    /*  Add any other necessary styling properties */
 }
 .button{
     -fx-background-color: #0eaf82;

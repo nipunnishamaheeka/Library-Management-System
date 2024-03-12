@@ -8,6 +8,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -19,6 +21,14 @@ public class SignUpFormController {
     @FXML
     public JFXButton btnLogin;
     public AnchorPane SignUpPane;
+    @FXML
+    private PasswordField txtPassword;
+
+    @FXML
+    private PasswordField txtReEnterPw;
+
+    @FXML
+    private TextField txtUserName;
 
     public void btnLoginOnAction(ActionEvent actionEvent) {
         try {
@@ -48,5 +58,19 @@ public class SignUpFormController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    @FXML
+    void passwordTxtOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void reEnterTxtOnAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void userNameTxtOnAction(ActionEvent event) {
+
     }
 }

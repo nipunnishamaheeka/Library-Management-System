@@ -59,11 +59,11 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Pane>
-                  <Pane fx:id="btnoverView3" prefHeight="53.0" prefWidth="56.0" styleClass="button_pane" stylesheets="@../css/adminNavigatiion.css">
+                  <Pane fx:id="btnUser" onMouseClicked="#btnUserOnAction" prefHeight="53.0" prefWidth="56.0" styleClass="button_pane" stylesheets="@../css/adminNavigatiion.css">
                      <children>
                         <ImageView fitHeight="40.0" fitWidth="38.0" layoutX="9.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                            <image>
-                              <Image url="@../assets/global.png" />
+                              <Image url="@../assets/profile.png" />
                            </image>
                            <cursor>
                               <Cursor fx:constant="HAND" />
@@ -76,7 +76,7 @@
                   </Pane>
                </children>
             </VBox>
-            <Pane fx:id="btnoverView31" layoutX="11.0" layoutY="615.0" prefHeight="53.0" prefWidth="56.0" styleClass="button_pane" stylesheets="@../css/adminNavigatiion.css">
+            <Pane fx:id="btnLogOut" layoutX="11.0" layoutY="615.0" onMouseClicked="#btnLogoutOnAction" prefHeight="53.0" prefWidth="56.0" styleClass="button_pane" stylesheets="@../css/adminNavigatiion.css">
                <children>
                   <ImageView fitHeight="40.0" fitWidth="38.0" layoutX="9.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                      <image>

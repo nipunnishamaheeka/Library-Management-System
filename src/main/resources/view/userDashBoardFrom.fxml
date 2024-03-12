@@ -15,9 +15,9 @@
 
 <AnchorPane prefHeight="770.0" prefWidth="1190.0" stylesheets="@../css/overView.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.userDashBoardFromController">
    <children>
-      <Pane prefHeight="770.0" prefWidth="1190.0" styleClass="mainPane">
+      <Pane fx:id="navigationPane" prefHeight="770.0" prefWidth="1190.0" styleClass="mainPane">
          <children>
-            <Label layoutX="36.0" layoutY="14.0" text="User DashBoard" />
+            <Label layoutX="30.0" layoutY="20.0" styleClass="headLine" text="User DashBoard" />
             <VBox layoutX="-4.0" layoutY="66.0" prefHeight="640.0" prefWidth="746.0" spacing="30.0">
                <children>
                   <HBox prefHeight="291.0" prefWidth="757.0" spacing="50.0">
@@ -72,7 +72,7 @@
                               <Font name="Arial" size="13.0" />
                            </font>
                         </Label>
-                        <JFXButton layoutX="145.0" layoutY="107.0" prefHeight="30.0" prefWidth="80.0" ripplerFill="#dde408" text="Edit" textFill="WHITE" />
+                        <JFXButton fx:id="btnEdit" layoutX="145.0" layoutY="107.0" onAction="#btnEditOnAction" prefHeight="30.0" prefWidth="80.0" ripplerFill="#dde408" text="Edit" textFill="WHITE" />
                      </children>
                   </Pane>
                   <HBox layoutX="16.0" layoutY="471.0" prefHeight="91.0" prefWidth="407.0" spacing="10.0">
@@ -100,7 +100,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
                   </HBox>
-                  <JFXButton layoutX="65.0" layoutY="623.0" prefHeight="57.0" prefWidth="309.0" styleClass="button-side" text="Return Books">
+                  <JFXButton fx:id="btnReturn" layoutX="65.0" layoutY="623.0" onMouseClicked="#btnReturnOnAction" prefHeight="57.0" prefWidth="309.0" styleClass="button-side" text="Return Books">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>

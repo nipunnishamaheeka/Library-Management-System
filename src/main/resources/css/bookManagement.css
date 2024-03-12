@@ -12,6 +12,12 @@
     -fx-font-size: 20;
     -fx-font-weight: bold;
 }
+.headLine{
+
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial;
+}
 .transparent{
     -fx-background-color: rgba(0,0,0,0);
 }
@@ -20,6 +26,12 @@
 }
 .drop-shadow {
     -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0), 10, 0, 0, 10);
+}
+.hbox{
+    -fx-background-color: rgba(14, 175, 130, 0.2);
+
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
 }
 
 

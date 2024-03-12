@@ -1,12 +1,16 @@
 .mainPane{
     -fx-background-color: rgba(14, 175, 130, 0.24);
     -fx-text-fill: white;
-    -fx-font-size: 20;
-    -fx-font-weight: bold;
     -fx-padding: 10;
     -fx-background-radius: 10;
     -fx-border-radius: 10;
     -fx-spacing: 10;
 
 
+}
+.headLine{
+
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial;
 }

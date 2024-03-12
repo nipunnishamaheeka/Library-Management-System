@@ -1,26 +1,21 @@
 .mainPane{
     -fx-background-color: rgba(14, 175, 130, 0.24);
-    -fx-text-fill: white;
     -fx-padding: 10;
     -fx-background-radius: 10;
     -fx-border-radius: 10;
     -fx-spacing: 10;
 }
 .headLine{
+
     -fx-font-size: 20;
     -fx-font-weight: bold;
     -fx-font-family: Arial;
 }
-.adminBadge{
-    -fx-background-color: #b7f86e;
-    -fx-text-fill: white;
-    -fx-opacity: 0.8;
-    -fx-font-size: 20;
-    -fx-font-weight: bold;
-    -fx-padding: 10;
-    -fx-background-radius: 15;
-    -fx-border-radius: 15;
-    -fx-spacing: 10;
+.hbox{
+    -fx-background-color: rgba(14, 175, 130, 0.2);
+
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
 }
 .button{
     -fx-background-color: #0eaf82;

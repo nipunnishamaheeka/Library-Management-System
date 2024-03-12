@@ -5,22 +5,14 @@
     -fx-background-radius: 10;
     -fx-border-radius: 10;
     -fx-spacing: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0), 100, 0, 0, 100);
+
 }
 .headLine{
+
     -fx-font-size: 20;
     -fx-font-weight: bold;
     -fx-font-family: Arial;
-}
-.adminBadge{
-    -fx-background-color: #b7f86e;
-    -fx-text-fill: white;
-    -fx-opacity: 0.8;
-    -fx-font-size: 20;
-    -fx-font-weight: bold;
-    -fx-padding: 10;
-    -fx-background-radius: 15;
-    -fx-border-radius: 15;
-    -fx-spacing: 10;
 }
 .button{
     -fx-background-color: #0eaf82;
@@ -33,4 +25,18 @@
     -fx-background-radius: 10;
     -fx-border-radius: 10;
     -fx-padding: 10;
+}
+.hbox{
+    -fx-background-color: #63bda5;
+
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+}
+.textFelid{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+-fx-prompt-text-fill: white;
+-fx-background-color:   #63bda5;
 }

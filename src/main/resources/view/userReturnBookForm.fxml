@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="770.0" prefWidth="1190.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.UserReturnBookFormController">
+   <children>
+      <Pane prefHeight="770.0" prefWidth="1190.0" styleClass="mainPane" stylesheets="@../css/returnBook.css">
+         <children>
+            <Label layoutX="535.0" layoutY="20.0" styleClass="headLine" text="Return Book" />
+            <Label layoutX="30.0" layoutY="175.0" text="Borrowed Book List">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Label>
+            <TableView layoutX="27.0" layoutY="223.0" prefHeight="200.0" prefWidth="1137.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="BookID" />
+                <TableColumn prefWidth="106.39999389648438" text="Book Name" />
+                  <TableColumn prefWidth="159.19998168945312" text="Writer 1" />
+                  <TableColumn prefWidth="158.39996337890625" text="Writer 2" />
+                  <TableColumn prefWidth="158.4000244140625" text="Writer 3" />
+                  <TableColumn prefWidth="146.39996337890625" text="Author" />
+                  <TableColumn prefWidth="126.40008544921875" text="Borrow Date" />
+              </columns>
+            </TableView>
+            <VBox alignment="TOP_CENTER" layoutX="461.0" layoutY="456.0" prefHeight="294.0" prefWidth="269.0" spacing="10.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="280.0" spacing="3.0" styleClass="hbox">
+                     <children>
+                        <Label text="Book ID :">
+                           <font>
+                              <Font name="Arial" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField prefHeight="30.0" prefWidth="187.0" promptText="Enter Here" styleClass="textFelid" />
+                     </children>
+                     <padding>
+                        <Insets right="4.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="280.0" spacing="3.0" styleClass="hbox">
+                     <children>
+                        <Label text="User ID :">
+                           <font>
+                              <Font name="Arial" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField prefHeight="30.0" prefWidth="187.0" promptText="Enter Here" styleClass="textFelid" />
+                     </children>
+                     <padding>
+                        <Insets right="4.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="280.0" spacing="3.0" styleClass="hbox">
+                     <children>
+                        <Label text="Borrow Date :">
+                           <font>
+                              <Font name="Arial" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets right="4.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="280.0" spacing="3.0" styleClass="hbox">
+                     <children>
+                        <Label text="Return Date">
+                           <font>
+                              <Font name="Arial" size="15.0" />
+                           </font>
+                        </Label>
+                        <DatePicker prefHeight="26.0" prefWidth="142.0" />
+                     </children>
+                     <padding>
+                        <Insets right="4.0" />
+                     </padding>
+                  </HBox>
+                  <JFXButton prefHeight="36.0" prefWidth="143.0" text="Conform Return">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </JFXButton>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" layoutX="455.0" layoutY="102.0" prefHeight="40.0" prefWidth="280.0" spacing="3.0" styleClass="hbox">
+               <children>
+                  <Label text="User ID : ">
+                     <font>
+                        <Font name="Arial" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField prefHeight="30.0" prefWidth="187.0" promptText="Enter Here" styleClass="textFelid" />
+               </children>
+               <padding>
+                  <Insets right="4.0" />
+               </padding>
+            </HBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

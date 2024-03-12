@@ -57,7 +57,7 @@ public class LoginFormController {
 
     public void btnLoginOnAction(ActionEvent actionEvent) throws IOException {
         LogInPane.getChildren().clear();
-        //LogInPane.getChildren().add(FXMLLoader.load(this.getClass().getResource("/view/userNavigationFrom.fxml")));
+        //LogInPane.getChildren().add(FXMLLoader.load(this.getClass().getResource("/view/userNavigationForm.fxml")));
         LogInPane.getChildren().add(FXMLLoader.load(this.getClass().getResource("/view/adminNavigationFrom.fxml")));
 
         FadeTransition fadeIn = new FadeTransition(Duration.millis(500), LogInPane);
