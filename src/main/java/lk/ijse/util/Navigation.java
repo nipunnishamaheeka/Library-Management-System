@@ -18,7 +18,7 @@ public class Navigation {
     public static void onTheTopNavigation(Pane pane, String link) {
 
         try {
-            FXMLLoader loader = new FXMLLoader(Navigation.class.getResource("/view/" + link));
+            FXMLLoader loader = new FXMLLoader(Navigation.class.getResource("/view/user/" + link));
             Parent root = loader.load();
             pane.getChildren().add(root);
             FadeTransition fadeIn = new FadeTransition(Duration.millis(1500), pane);

@@ -1,15 +1,10 @@
 package lk.ijse.controller;
 
 import com.jfoenix.controls.JFXButton;
-import com.mysql.cj.log.Log;
 import javafx.animation.FadeTransition;
-import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -58,7 +53,7 @@ public class LoginFormController {
     public void btnLoginOnAction(ActionEvent actionEvent) throws IOException {
         LogInPane.getChildren().clear();
         //LogInPane.getChildren().add(FXMLLoader.load(this.getClass().getResource("/view/userNavigationForm.fxml")));
-        LogInPane.getChildren().add(FXMLLoader.load(this.getClass().getResource("/view/adminNavigationFrom.fxml")));
+        LogInPane.getChildren().add(FXMLLoader.load(this.getClass().getResource("/view/admin/adminNavigationFrom.fxml")));
 
         FadeTransition fadeIn = new FadeTransition(Duration.millis(500), LogInPane);
         fadeIn.setFromValue(0.0);

@@ -32,21 +32,7 @@ public class SignUpFormController {
 
     public void btnLoginOnAction(ActionEvent actionEvent) {
         try {
-            /*FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/loginFrom.fxml"));
-            Parent root = loader.load();
 
-
-            LoginFormController loginController = loader.getController();
-
-            Scene loginScene = new Scene(root);
-
-            Stage currentStage = (Stage) SignUpPane.getScene().getWindow();
-
-            TranslateTransition transition = new TranslateTransition(Duration.millis(350), root);
-            transition.setFromX(-currentStage.getWidth());
-            transition.setToX(0);
-
-*/
             SignUpPane.getChildren().clear();
             SignUpPane.getChildren().add(FXMLLoader.load(this.getClass().getResource("/view/loginFrom.fxml")));
 
