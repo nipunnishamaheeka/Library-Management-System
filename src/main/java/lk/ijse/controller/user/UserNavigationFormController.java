@@ -20,7 +20,7 @@ public class UserNavigationFormController {
 
 
     public void initialize() throws IOException {
-        Navigation.onTheTopNavigation(navigationPane, "userGetBook.fxml");
+        Navigation.onTheTopNavigation(navigationPane, "/view/user/userGetBook.fxml");
         FadeTransition fadeIn = new FadeTransition(Duration.millis(1000), root);
         fadeIn.setFromValue(0.0);
         fadeIn.setToValue(1.0);
@@ -41,12 +41,12 @@ public class UserNavigationFormController {
 
     public void btnBookStoreOnAction(MouseEvent event) {
         navigationPane.getChildren().clear();
-        Navigation.onTheTopNavigation(navigationPane, "userGetBook.fxml");
+        Navigation.onTheTopNavigation(navigationPane, "/view/user/userGetBook.fxml");
     }
 
     public void btnHistoryOnAction(MouseEvent event) {
         navigationPane.getChildren().clear();
-        Navigation.onTheTopNavigation(navigationPane, "userHistoryForm.fxml");
+        Navigation.onTheTopNavigation(navigationPane, "/view/user/userHistoryForm.fxml");
     }
 
 }
