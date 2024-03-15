@@ -14,7 +14,8 @@ import java.io.IOException;
 
 public class Navigation {
 
-
+    private static Stage stage;
+    private static Scene scene;
     public static void onTheTopNavigation(Pane pane, String link) {
 
         try {
@@ -28,5 +29,22 @@ public class Navigation {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public static void switchNavigation(String link, ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(Navigation.class.getResource("/view/user/" + link));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.centerOnScreen();
+            stage.show();
+            FadeTransition fadeIn = new FadeTransition(Duration.millis(500), scene.getRoot());
+            fadeIn.setFromValue(0.0);
+            fadeIn.setToValue(1.0);
+            fadeIn.play();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
