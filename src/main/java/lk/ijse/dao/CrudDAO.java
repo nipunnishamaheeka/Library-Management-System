@@ -1,14 +1,16 @@
 package lk.ijse.dao;
 
-import javafx.collections.ObservableList;
+import lk.ijse.entity.Book;
+
+import java.util.List;
 
 public interface CrudDAO<T> extends SuperDAO{
     boolean save(T dto) throws Exception;
 
-    boolean update(String id,T dto) throws Exception;
+    boolean update(int id,T dto) throws Exception;
 
-    boolean delete(String id) throws Exception;
-    T search(String id) throws Exception;
+    boolean delete(int id) throws Exception;
+    T search(int id) throws Exception;
 
-    ObservableList<T> loadAll() throws Exception;
+    List<Book> loadAll() throws Exception;
 }
