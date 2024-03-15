@@ -1,0 +1,37 @@
+.mainPane{
+
+    -fx-background-color: rgba(14, 175, 130, 0.24);
+    -fx-text-fill: white;
+    -fx-padding: 10;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-spacing: 10;
+
+
+}
+.headLine{
+
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial;
+}
+.button{
+    -fx-background-color: #0eaf82;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 12;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial, sans-serif;
+    -fx-border-color: white;
+    -fx-border-width: 0.5;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-padding: 10;
+}
+.textFelid{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-prompt-text-fill: white;
+    -fx-background-color:   #63bda5;
+}

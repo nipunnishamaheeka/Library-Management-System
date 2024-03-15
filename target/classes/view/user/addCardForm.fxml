@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<HBox alignment="CENTER" prefHeight="50.0" prefWidth="246.0" style="-fx-background-color: #0eaf82; -fx-background-radius: 10px;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.user.card.AddCardFormController">
+   <children>
+      <VBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="148.0" spacing="10.0">
+         <children>
+            <Label fx:id="lblBookName" text="Book Name" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDate" text="Borrow Date" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+      <JFXButton fx:id="btnReturn" onAction="#btnReturnOnAction" prefHeight="26.0" prefWidth="78.0" style="-fx-background-color: #513BE0; -fx-text-fill: white;" text="Return" />
+   </children>
+</HBox>

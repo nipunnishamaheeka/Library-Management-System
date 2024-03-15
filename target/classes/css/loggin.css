@@ -1,0 +1,64 @@
+.sidePane{
+
+    -fx-background-color: #0eaf82;
+}
+.signup{
+    -fx-font-size: 32;
+    -fx-text-fill: #0eaf82;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial, sans-serif;
+}
+.headupPane{
+    -fx-effect: dropshadow(gaussian, #6586A3, 15, 0, 0, 0);
+}
+.underText{
+    -fx-font-size: 13;
+    -fx-font-weight: 50px;
+    -fx-font-family: Arial, sans-serif;
+
+}
+.fillPane{
+    -fx-background-color: #88cfb9;
+    -fx-opacity: 0.8;
+}
+.fillPane-Inter{
+    -fx-background-color:  #0eaf82;
+}
+
+/* style.css */
+
+.mfx-text-field {
+    -fx-prompt-text-fill: black;
+    -fx-background-color: #88cfb9;
+    -fx-text-fill: black;
+    -fx-border-color: transparent; /* Remove border */
+    -fx-border-radius: 0; /* Remove border radius */
+    /*  Add any other necessary styling properties */
+}
+.button{
+    -fx-background-color: #0eaf82;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial, sans-serif;
+    -fx-background-radius: 2;
+    -fx-border-radius: 2;
+    -fx-padding: 10;
+}
+
+.button-side{
+    -fx-background-color: #0eaf82;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 13;
+    -fx-font-weight: bold;
+    -fx-font-family: Arial, sans-serif;
+    -fx-border-color: white;
+    -fx-border-width: 0.5;
+    -fx-background-radius: 2;
+    -fx-border-radius: 2;
+    -fx-padding: 10;
+}
+.cursive {
+    font-family: cursive;
+}
+

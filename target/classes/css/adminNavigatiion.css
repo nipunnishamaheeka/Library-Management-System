@@ -1,0 +1,40 @@
+.navigationPane{
+    -fx-background-color: #88cfb9;
+    -fx-text-fill: white;
+    -fx-padding: 10;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-spacing: 10;
+}
+.mainPane{
+    -fx-background-color: rgba(14, 175, 130, 0.24);
+    -fx-text-fill: white;
+    -fx-padding: 10;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-spacing: 10;
+
+
+}
+.button_pane{
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+
+}
+.button_pane:hover{
+    -fx-background-color: rgba(14, 175, 130, 0.13);
+    -fx-border-color: rgba(14, 175, 130, 0.13);
+    -fx-font: 14px "Arial";
+    -fx-shadow-color: #DEDEDE;
+    -fx-effect: dropshadow(gaussian, #e0fff7, 15, 0, 0, 0);
+}
+.overViewHeader_pane{
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 25;
+    -fx-border-radius: 25;
+    -fx-border-color: #ffffff;
+
+}
+.overViewHeader_pane:hover{
+    -fx-effect: dropshadow(gaussian, #6586A3, 15, 0, 0, 0);
+}
