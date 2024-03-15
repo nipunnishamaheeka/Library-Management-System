@@ -201,7 +201,7 @@ public class UserGetBookFormController {
 
     public void btnEditOnAction(ActionEvent actionEvent) {
         navigationPane.getChildren().clear();
-        Navigation.onTheTopNavigation(navigationPane, "userProfileUpdaterForm.fxml");
+        Navigation.onTheTopNavigation(navigationPane, "/view/user/userProfileUpdaterForm.fxml");
     }
 
 }
