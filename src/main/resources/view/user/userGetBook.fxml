@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="navigationPane" prefHeight="770.0" prefWidth="1190.0" stylesheets="@../../css/bookManagement.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.user.UserGetBookFormController">
+   <children>
+      <Pane prefHeight="770.0" prefWidth="1190.0" styleClass="mainPane">
+         <children>
+            <Label layoutX="30.0" layoutY="20.0" styleClass="headLine" text="Book Store" />
+            <VBox layoutX="14.0" layoutY="78.0" prefHeight="687.0" prefWidth="892.0" spacing="10.0">
+               <children>
+                  <Label prefWidth="121.0" text="Recomended You">
+                     <font>
+                        <Font name="Berlin Sans FB" size="16.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane prefHeight="200.0" prefWidth="898.0" style="-fx-background-color: transparent;" stylesheets="@../../css/Scrool.css" VBox.vgrow="ALWAYS">
+                     <content>
+                        <GridPane fx:id="bookContainer" prefHeight="0.0" prefWidth="0.0">
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                        </GridPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="20.0" top="10.0" />
+               </padding>
+            </VBox>
+            <Pane layoutX="788.0" layoutY="66.0" prefHeight="40.0" prefWidth="96.0" styleClass="cartPane">
+               <children>
+                  <ImageView fitHeight="36.0" fitWidth="40.0" layoutX="8.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/icons8-cart.gif" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="lblCount" layoutX="54.0" layoutY="9.0" text="00">
+                     <font>
+                        <Font name="Arial Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane layoutX="907.0" prefHeight="770.0" prefWidth="283.0" style="-fx-background-color: #88cfb9; -fx-background-radius: 10;">
+         <children>
+            <VBox alignment="TOP_CENTER" layoutY="172.0" prefHeight="216.0" prefWidth="283.0" spacing="10.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="262.0" spacing="3.0" styleClass="hbox">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/search.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="txtSearch" prefHeight="35.0" prefWidth="225.0" promptText="Author Name" styleClass="textFelid" />
+                     </children>
+                     <padding>
+                        <Insets right="4.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="280.0" spacing="3.0" styleClass="hbox">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/search.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="txtSearch" prefHeight="30.0" prefWidth="246.0" promptText="Book Name" styleClass="textFelid" />
+                     </children>
+                     <padding>
+                        <Insets right="4.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="280.0" spacing="3.0" styleClass="hbox">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../assets/search.png" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="txtSearch" prefHeight="30.0" prefWidth="246.0" promptText="Genure" styleClass="textFelid" />
+                     </children>
+                     <padding>
+                        <Insets right="4.0" />
+                     </padding>
+                  </HBox>
+                  <JFXButton fx:id="btnSearch" onAction="#btnSearchOnAction" prefHeight="36.0" prefWidth="111.0" text="Search">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <VBox alignment="TOP_CENTER" layoutY="441.0" prefHeight="326.0" prefWidth="283.0">
+               <children>
+                  <ScrollPane prefHeight="312.0" prefWidth="262.0" stylesheets="@../../css/Scrool.css">
+                     <content>
+                        <VBox fx:id="BookListVBOX" prefHeight="302.0" prefWidth="260.0" spacing="5.0" style="-fx-background-color: #88cfb9;">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding></VBox>
+                     </content>
+                  </ScrollPane>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <Label layoutX="101.0" layoutY="414.0" text="Book List">
+               <font>
+                  <Font name="Arial Bold" size="18.0" />
+               </font>
+            </Label>
+            <Pane layoutX="7.0" layoutY="43.0" prefHeight="106.0" prefWidth="270.0" styleClass="userPane">
+               <children>
+                  <Label layoutX="86.0" layoutY="15.0" text="Nipun Nishamaheeka">
+                     <font>
+                        <Font name="Arial Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="51.0" fitWidth="51.0" layoutX="23.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../assets/user.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="86.0" layoutY="37.0" text="(Member Since on 14-02-2002)">
+                     <font>
+                        <Font name="Arial" size="11.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="btnEdit" layoutX="95.0" layoutY="60.0" onAction="#btnEditOnAction" prefHeight="27.0" prefWidth="80.0" ripplerFill="#dde408" text="Edit" textFill="WHITE" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

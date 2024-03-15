@@ -20,22 +20,13 @@ public class UserNavigationFormController {
 
 
     public void initialize() throws IOException {
-        Navigation.onTheTopNavigation(navigationPane, "userDashBoardFrom.fxml");
+        Navigation.onTheTopNavigation(navigationPane, "userGetBook.fxml");
         FadeTransition fadeIn = new FadeTransition(Duration.millis(1000), root);
         fadeIn.setFromValue(0.0);
         fadeIn.setToValue(1.0);
         fadeIn.play();
     }
 
-    public void btnDashBoardOnAction(MouseEvent event) {
-        navigationPane.getChildren().clear();
-        Navigation.onTheTopNavigation(navigationPane, "userDashBoardFrom.fxml");
-    }
-
-    public void btnGetBookOnAction(MouseEvent event) {
-        navigationPane.getChildren().clear();
-        Navigation.onTheTopNavigation(navigationPane, "userGetBookForm.fxml");
-    }
     public void btnLogoutOnAction(MouseEvent event) {
         try {
             Parent root = FXMLLoader.load(this.getClass().getResource("/view/loginFrom.fxml"));
@@ -50,7 +41,7 @@ public class UserNavigationFormController {
 
     public void btnBookStoreOnAction(MouseEvent event) {
         navigationPane.getChildren().clear();
-        Navigation.onTheTopNavigation(navigationPane, "userBookStore.fxml");
+        Navigation.onTheTopNavigation(navigationPane, "userGetBook.fxml");
     }
 
     public void btnHistoryOnAction(MouseEvent event) {
@@ -58,9 +49,5 @@ public class UserNavigationFormController {
         Navigation.onTheTopNavigation(navigationPane, "userHistoryForm.fxml");
     }
 
-    public void btnGetOnAction(MouseEvent event) {
-        navigationPane.getChildren().clear();
-        Navigation.onTheTopNavigation(navigationPane, "userGetBookForm.fxml");
-    }
 }
 

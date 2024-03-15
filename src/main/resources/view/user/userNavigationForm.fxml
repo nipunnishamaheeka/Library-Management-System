@@ -14,7 +14,7 @@
          <children>
             <ImageView fitHeight="71.0" fitWidth="78.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../assets/Logo%20Edit.png" />
+                  <Image url="@../../assets/Logo%20Edit.png" />
                </image>
             </ImageView>
          </children>
@@ -23,21 +23,6 @@
          <children>
             <VBox alignment="TOP_CENTER" fillWidth="false" layoutX="8.0" layoutY="14.0" prefHeight="373.0" prefWidth="62.0" spacing="25.0">
                <children>
-                  <Pane fx:id="btnDashBoard" onMouseClicked="#btnDashBoardOnAction" prefHeight="53.0" prefWidth="56.0" styleClass="button_pane" stylesheets="@../../css/adminNavigatiion.css">
-                     <children>
-                        <ImageView fitHeight="40.0" fitWidth="38.0" layoutX="9.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" smooth="false">
-                           <image>
-                              <Image url="@../../assets/dashboard.png" />
-                           </image>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </ImageView>
-                     </children>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Pane>
                   <Pane fx:id="btnBookStore" onMouseClicked="#btnBookStoreOnAction" prefHeight="53.0" prefWidth="56.0" styleClass="button_pane" stylesheets="@../../css/adminNavigatiion.css">
                      <children>
                         <ImageView fitHeight="40.0" fitWidth="38.0" layoutX="9.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" smooth="false">
@@ -54,21 +39,6 @@
                      </cursor>
                   </Pane>
                   <Pane fx:id="btnHistory" onMouseClicked="#btnHistoryOnAction" prefHeight="53.0" prefWidth="56.0" styleClass="button_pane" stylesheets="@../../css/adminNavigatiion.css">
-                     <children>
-                        <ImageView fitHeight="40.0" fitWidth="38.0" layoutX="9.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" smooth="false">
-                           <image>
-                              <Image url="@../../assets/file.png" />
-                           </image>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </ImageView>
-                     </children>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Pane>
-                  <Pane fx:id="btnGetBook" onMouseClicked="#btnGetOnAction" prefHeight="53.0" prefWidth="56.0" styleClass="button_pane" stylesheets="@../../css/adminNavigatiion.css">
                      <children>
                         <ImageView fitHeight="40.0" fitWidth="38.0" layoutX="9.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" smooth="false">
                            <image>

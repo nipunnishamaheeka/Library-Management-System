@@ -73,7 +73,11 @@
                                           </ImageView>
                                        </children>
                                     </Pane>
-                                    <PasswordField fx:id="txtPassword" onAction="#passwordTxtOnAction" prefHeight="46.0" prefWidth="263.0" promptText="Password" styleClass="mfx-text-field" />
+                                    <TextField fx:id="txtEmail" onAction="#txtEmailOnAction" prefHeight="46.0" prefWidth="263.0" promptText="E - Mail" styleClass="mfx-text-field">
+                                       <font>
+                                          <Font name="Arial" size="14.0" />
+                                       </font>
+                                    </TextField>
                                  </children>
                               </HBox>
                            </children>
@@ -91,14 +95,14 @@
                                           </ImageView>
                                        </children>
                                     </Pane>
-                                    <PasswordField fx:id="txtReEnterPw" onAction="#reEnterTxtOnAction" prefHeight="46.0" prefWidth="263.0" promptText="Password" styleClass="mfx-text-field" />
+                                    <PasswordField fx:id="txtPasswordHide" onAction="#txtPasswordHideOnAction" prefHeight="46.0" prefWidth="263.0" promptText="Password" styleClass="mfx-text-field" />
                                  </children>
                               </HBox>
                            </children>
                         </Pane>
                      </children>
                   </VBox>
-                  <JFXButton layoutX="166.0" layoutY="412.0" prefHeight="36.0" prefWidth="207.0" text="Sign Up" />
+                  <JFXButton fx:id="btnSignUP" layoutX="166.0" layoutY="412.0" onAction="#btnSignUpOnAction" prefHeight="36.0" prefWidth="207.0" text="Sign Up" />
                   <Label layoutX="117.0" layoutY="369.0" text="Enter Your" />
                   <Label layoutX="117.0" layoutY="456.0" text="Forgot Your Password?" />
                </children>
