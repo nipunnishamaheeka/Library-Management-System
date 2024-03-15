@@ -1,19 +1,16 @@
 package lk.ijse.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
 @NoArgsConstructor
 @Data
-
+@AllArgsConstructor
 @Entity
 @Table(name = "Branch")
-public class Branch implements Serializable {
+public class Branch {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,20 +18,14 @@ public class Branch implements Serializable {
 
     private int id;
     private String name;
-    private String manager;
     private String location;
     private String email;
 
     @ManyToOne
-    @JoinColumn(name = "admin_id", insertable = false, updatable = false)
-    private Admin admin;
+    private Credentials user;
 
-    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "branch")
-    private List<Book> books = new ArrayList<>();
-
-    public Branch(String name, String manager, String location, String email) {
+    public Branch(String name, String location, String email) {
         this.name = name;
-        this.manager = manager;
         this.location = location;
         this.email = email;
     }
