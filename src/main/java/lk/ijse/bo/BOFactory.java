@@ -1,6 +1,7 @@
 package lk.ijse.bo;
 
 import lk.ijse.bo.custom.impl.BookBOImpl;
+import lk.ijse.bo.custom.impl.BranchBOImpl;
 import lk.ijse.bo.custom.impl.CredentialsBOImpl;
 import lk.ijse.bo.custom.impl.TransactionBOImpl;
 
@@ -22,7 +23,7 @@ public class BOFactory {
             case CREDENTIALS:
                 return new CredentialsBOImpl();
             case BRANCH:
-                //return new BranchBOImpl();
+                return new BranchBOImpl();
             case BOOK:
                 return new BookBOImpl();
             case TRANSACTION:

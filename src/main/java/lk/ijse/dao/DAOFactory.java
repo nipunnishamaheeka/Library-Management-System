@@ -1,5 +1,6 @@
 package lk.ijse.dao;
 
+import lk.ijse.dao.custom.impl.BranchDAOImpl;
 import lk.ijse.dao.custom.impl.CredentialsDAOImpl;
 import lk.ijse.dao.custom.impl.BookDAOImpl;
 import lk.ijse.dao.custom.impl.TransactionDAOImpl;
@@ -23,7 +24,7 @@ public class DAOFactory {
             case CREDENTIALS:
                 return new CredentialsDAOImpl();
             case BRANCH:
-//                return new BranchDAOImpl();
+                return new BranchDAOImpl();
             case BOOK:
                 return new BookDAOImpl();
             case TRANSACTION:
