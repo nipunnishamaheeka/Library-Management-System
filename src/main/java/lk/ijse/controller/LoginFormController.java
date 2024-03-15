@@ -60,7 +60,11 @@ public class LoginFormController {
             if (credentialsDto != null) {
                 if (credentialsDto.getEmail() != null && txtPasswordHide.getText().equals(credentialsDto.getPassword())) {
                     userID=credentialsDto.getUid();
-                    Navigation.switchNavigation("userNavigationForm.fxml", actionEvent);
+                    if (credentialsDto.isAdmin()) {
+                        Navigation.switchNavigation("/view/admin/adminNavigationFrom.fxml", actionEvent);
+                    } else {
+                        Navigation.switchNavigation("/view/user/userNavigationForm.fxml", actionEvent);
+                    }
                 }
             } else {
                 lblWarning.setText("Invalid Username or Password !");

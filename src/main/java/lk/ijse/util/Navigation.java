@@ -19,7 +19,7 @@ public class Navigation {
     public static void onTheTopNavigation(Pane pane, String link) {
 
         try {
-            FXMLLoader loader = new FXMLLoader(Navigation.class.getResource("/view/user/" + link));
+            FXMLLoader loader = new FXMLLoader(Navigation.class.getResource(link));
             Parent root = loader.load();
             pane.getChildren().add(root);
             FadeTransition fadeIn = new FadeTransition(Duration.millis(1500), pane);
@@ -32,7 +32,7 @@ public class Navigation {
     }
     public static void switchNavigation(String link, ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(Navigation.class.getResource("/view/user/" + link));
+            Parent root = FXMLLoader.load(Navigation.class.getResource(link));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);

@@ -77,7 +77,7 @@
                      </children>
                   </VBox>
                   <JFXButton fx:id="btnLogin" layoutX="166.0" layoutY="412.0" onAction="#btnLoginOnAction" prefHeight="36.0" prefWidth="207.0" text="Login" />
-                  <Label fx:id="lblWarning" layoutX="117.0" layoutY="369.0" text="Enter Your" />
+                  <Label fx:id="lblWarning" layoutX="117.0" layoutY="369.0" text="Enter Your" textFill="RED" />
                   <Label layoutX="117.0" layoutY="456.0" text="Forgot Your Password?" />
                </children>
             </Pane>
