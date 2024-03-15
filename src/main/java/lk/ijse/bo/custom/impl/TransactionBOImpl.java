@@ -28,7 +28,9 @@ public class TransactionBOImpl implements TransactionBO {
     @Override
     public boolean saveTransaction(TransactionDto dto) throws Exception {
         Session session = SessionFactoryConfig.getInstance().getSession();
-
+        credentialsDAO.setSession(session);
+        bookDAO.setSession(session);
+        transactionDAO.setSession(session);
         Transaction transaction = session.beginTransaction();
 
         Credentials credentials = credentialsDAO.searchByUsername(dto.getUserName());
@@ -43,15 +45,18 @@ public class TransactionBOImpl implements TransactionBO {
         transactions.setBorrowing(dto.getBorrowing());
         transactions.setReturning(dto.getReturning());
         transactions.setStatus(dto.getStatus());
+        transactions.setUser(credentials);
+        transactions.setBook(book);
+
 
         credentials.getTransactions().add(transactions);
-        System.out.println(book.getTransactions());
+        //System.out.println(book.getTransactions());
         book.getTransactions().add(transactions);
 
         credentialsDAO.save(credentials);
         bookDAO.save(book);
 
-        transactionDAO.setSession(session);
+//        transactionDAO.setSession(session);
         transactionDAO.save(transactions);
         transaction.commit();
 

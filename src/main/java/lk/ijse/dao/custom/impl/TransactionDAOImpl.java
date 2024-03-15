@@ -3,7 +3,6 @@ package lk.ijse.dao.custom.impl;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import lk.ijse.dao.custom.TransactionDAO;
-import lk.ijse.entity.Book;
 import lk.ijse.entity.Transactions;
 import lk.ijse.util.SessionFactoryConfig;
 import org.hibernate.Session;
@@ -43,7 +42,7 @@ public class TransactionDAOImpl implements TransactionDAO {
     }
 
     @Override
-    public List<Book> loadAll() throws Exception {
+    public List<Transactions> loadAll() throws Exception {
         return null;
     }
 
