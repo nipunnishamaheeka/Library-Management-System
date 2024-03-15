@@ -5,10 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
-import java.sql.Date;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Timestamp;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,32 +13,32 @@ import java.util.List;
 
 @Entity
 @Table(name = "transaction")
-public class Transactions implements Serializable {
+public class Transactions  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "transaction_id")
     private int id;
-
-    private String userName;
 
     @Column(name = "book_title")
     private String bookName;
 
     private String branch;
 
-    private Date borrowing;
+    private Timestamp borrowing;
 
-    private Date returning;
+    private Timestamp returning;
 
     private String status;
 
-    @ManyToMany(mappedBy = "transactionList")
-    private List<Book> bookList = new ArrayList<>();
+    @ManyToOne
+    private Book book;
 
-    public Transactions(String userName, String bookName, String branch, Date borrowing, Date returning) {
-        this.userName = userName;
+    @ManyToOne
+    private Credentials user;
+
+    public Transactions( String bookName, Timestamp borrowing, Timestamp returning) {
+
         this.bookName = bookName;
-        this.branch = branch;
         this.borrowing = borrowing;
         this.returning = returning;
     }

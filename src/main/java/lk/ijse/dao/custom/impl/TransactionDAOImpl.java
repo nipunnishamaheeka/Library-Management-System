@@ -3,16 +3,19 @@ package lk.ijse.dao.custom.impl;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import lk.ijse.dao.custom.TransactionDAO;
+import lk.ijse.entity.Book;
 import lk.ijse.entity.Transactions;
 import lk.ijse.util.SessionFactoryConfig;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.util.List;
 
 public class TransactionDAOImpl implements TransactionDAO {
+    private Session session;
 
     @Override
     public boolean save(Transactions addTransaction) throws Exception {
@@ -25,22 +28,22 @@ public class TransactionDAOImpl implements TransactionDAO {
     }
 
     @Override
-    public boolean update(String id, Transactions dto) throws Exception {
+    public boolean update(int id, Transactions dto) throws Exception {
         return false;
     }
 
     @Override
-    public boolean delete(String id) throws Exception {
+    public boolean delete(int id) throws Exception {
         return false;
     }
 
     @Override
-    public Transactions search(String id) throws Exception {
+    public Transactions search(int id) throws Exception {
         return null;
     }
 
     @Override
-    public ObservableList<Transactions> loadAll() throws Exception {
+    public List<Book> loadAll() throws Exception {
         return null;
     }
 
@@ -48,7 +51,7 @@ public class TransactionDAOImpl implements TransactionDAO {
     public ObservableList<Transactions> getUserTransaction(String user, String status) {
         ObservableList<Transactions> transactions = FXCollections.observableArrayList();
         try (Session session = SessionFactoryConfig.getInstance().getSession()) {
-            Query<Transactions> query = session.createQuery("FROM Transactions WHERE userName = :userName AND status = :status", Transactions.class);
+            Query<Transactions> query = session.createQuery("FROM Transactions WHERE user = :user AND status = :status", Transactions.class);
             query.setParameter("userName", user);
             query.setParameter("status",status);
             transactions.addAll(query.getResultList());
@@ -65,7 +68,7 @@ public class TransactionDAOImpl implements TransactionDAO {
         Transactions existingTransaction = updateSession.get(Transactions.class, id);
         if (existingTransaction!= null) {
             existingTransaction.setStatus(status);
-            existingTransaction.setReturning(Date.valueOf(LocalDate.now()));
+            existingTransaction.setReturning(Timestamp.valueOf (LocalDate.now().atStartOfDay()));
             updateSession.merge(existingTransaction);
         } else {
             updateTransaction.commit();
@@ -77,5 +80,10 @@ public class TransactionDAOImpl implements TransactionDAO {
         return true;
 
 
+    }
+
+    @Override
+    public void setSession(Session session) {
+this.session = session;
     }
 }
