@@ -70,7 +70,6 @@ public class CredentialsBOImpl implements CredentialsBO {
 //            return new Credentials(
 //                    credential.getAid(),
 //                    credential.getUid()
-//
 //            );
 //        }
 //        return null;
