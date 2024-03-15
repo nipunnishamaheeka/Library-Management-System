@@ -27,35 +27,35 @@ public class AdminNavigationFormController {
 //        fadeIn.play();
 
 
-        Navigation.onTheTopNavigation(navigationPane, "adminOverViewForm.fxml");
+        Navigation.onTheTopNavigation(navigationPane, "/view/admin/adminOverViewForm.fxml");
 
     }
 
 
     public void btnBranchMangementOnAction(MouseEvent event) {
         navigationPane.getChildren().clear();
-        Navigation.onTheTopNavigation(navigationPane, "branchManagementForm.fxml");
+        Navigation.onTheTopNavigation(navigationPane, "/view/admin/branchManagementForm.fxml");
     }
 
     public void btnBookMangementOnAction(MouseEvent event) {
         navigationPane.getChildren().clear();
-        Navigation.onTheTopNavigation(navigationPane, "bookManagementForm.fxml");
+        Navigation.onTheTopNavigation(navigationPane, "/view/admin/bookManagementForm.fxml");
     }
 
     public void btnAdminMangementOnAction(MouseEvent event) {
         navigationPane.getChildren().clear();
-        Navigation.onTheTopNavigation(navigationPane, "adminManagementForm.fxml");
+        Navigation.onTheTopNavigation(navigationPane, "/view/admin/adminManagementForm.fxml");
     }
 
     public void btnHome(MouseEvent event) {
         navigationPane.getChildren().clear();
-        Navigation.onTheTopNavigation(navigationPane, "adminOverViewForm.fxml");
+        Navigation.onTheTopNavigation(navigationPane, "/view/admin/adminOverViewForm.fxml");
 
     }
 
     public void btnUserOnAction(MouseEvent event) {
         navigationPane.getChildren().clear();
-        Navigation.onTheTopNavigation(navigationPane, "adminUserManagementFrom.fxml");
+        Navigation.onTheTopNavigation(navigationPane, "/view/admin/adminUserManagementFrom.fxml");
     }
 
     public void btnLogoutOnAction(MouseEvent event) {
