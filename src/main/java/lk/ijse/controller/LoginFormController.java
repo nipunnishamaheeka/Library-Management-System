@@ -52,27 +52,76 @@ public class LoginFormController {
 
     }
 
-    public void btnLoginOnAction(ActionEvent actionEvent) throws IOException {
-        try {
-            CredentialsDto credentialsDto = credentialsBO.searchUser(txtUserName.getText());
-            System.out.println(credentialsDto);
+//    public void btnLoginOnAction(ActionEvent actionEvent) throws IOException {
+//        try {
+//            CredentialsDto credentialsDto = credentialsBO.searchUser(txtUserName.getText());
+//            System.out.println(credentialsDto);
+//
+//            if (credentialsDto != null) {
+//                if (credentialsDto.getEmail() != null && txtPasswordHide.getText().equals(credentialsDto.getPassword())) {
+//                    userID=credentialsDto.getUid();
+//                    if (credentialsDto.isAdmin()) {
+//                        Navigation.switchNavigation("/view/admin/adminNavigationFrom.fxml", actionEvent);
+//                    } else {
+//                        Navigation.switchNavigation("/view/user/userNavigationForm.fxml", actionEvent);
+//                    }
+//                }
+//            } else {
+//                lblWarning.setText("Invalid Username or Password !");
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
+public void btnLoginOnAction(ActionEvent actionEvent) throws IOException {
+    try {
+        String username = txtUserName.getText();
+        String password = txtPasswordHide.getText();
 
-            if (credentialsDto != null) {
-                if (credentialsDto.getEmail() != null && txtPasswordHide.getText().equals(credentialsDto.getPassword())) {
-                    userID=credentialsDto.getUid();
-                    if (credentialsDto.isAdmin()) {
-                        Navigation.switchNavigation("/view/admin/adminNavigationFrom.fxml", actionEvent);
-                    } else {
-                        Navigation.switchNavigation("/view/user/userNavigationForm.fxml", actionEvent);
-                    }
+        if (!validateCredentials(username, password)) {
+            return; // Exit if credentials are invalid
+        }
+        CredentialsDto credentialsDto = credentialsBO.searchUser(username);
+        System.out.println(credentialsDto);
+
+        if (credentialsDto != null) {
+            if (credentialsDto.getEmail() != null && password.equals(credentialsDto.getPassword())) {
+                userID = credentialsDto.getUid();
+                if (credentialsDto.isAdmin()) {
+                    Navigation.switchNavigation("/view/admin/adminNavigationFrom.fxml", actionEvent);
+                } else {
+                    Navigation.switchNavigation("/view/user/userNavigationForm.fxml", actionEvent);
                 }
             } else {
-                lblWarning.setText("Invalid Username or Password !");
+                lblWarning.setText("Invalid Username or Password!");
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } else {
+            lblWarning.setText("Invalid Username or Password!");
         }
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+}
+
+
+    public boolean validateCredentials(String username, String password) {
+        String usernameRegex = "^[a-zA-Z0-9_]+$";
+
+        String passwordRegex = "^[a-zA-Z0-9@#$%^&+=]+$";
+
+        if (!username.matches(usernameRegex)) {
+            lblWarning.setText("Invalid Username format!");
+            return false; // Username format is invalid
+        }
+
+        if (!password.matches(passwordRegex)) {
+            lblWarning.setText("Invalid Password format!");
+            return false; // Password format is invalid
+        }
+
+        return true; // Username and password are valid
+    }
+
 //    private void searchUser(){
 //        String username = txtUserName.getText();
 //        String password = txtPasswordHide.getText();
