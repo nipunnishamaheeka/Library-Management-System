@@ -14,6 +14,7 @@ import org.hibernate.query.Query;
 import java.util.List;
 
 public class BookDAOImpl implements BookDAO {
+    private Session session;
     @Override
     public boolean save(Book addBook) {
         Session saveSession = SessionFactoryConfig.getInstance().getSession();
@@ -25,7 +26,7 @@ public class BookDAOImpl implements BookDAO {
     }
 
     @Override
-    public boolean delete(String id){
+    public boolean delete(int id){
         Session deleteSession = SessionFactoryConfig.getInstance().getSession();
         Transaction deleteTransaction = deleteSession.beginTransaction();
         Book deleteBook = deleteSession.get(Book.class, id);
@@ -40,12 +41,11 @@ public class BookDAOImpl implements BookDAO {
     }
 //check this
     @Override
-    public boolean update(String id, Book dto) {
+    public boolean update(int id, Book dto) {
         Session updateSession = SessionFactoryConfig.getInstance().getSession();
         Transaction updateTransaction = updateSession.beginTransaction();
         Book existingBook = updateSession.get(Book.class, id);
         if (existingBook!= null) {
-            existingBook.setBranch(dto.getBranch());
             existingBook.setTitle(dto.getTitle());
            // existingBook.setAuthor(dto.getAuthor());
             existingBook.setGenre(dto.getGenre());
@@ -62,7 +62,7 @@ public class BookDAOImpl implements BookDAO {
     }
 
     @Override
-    public Book search(String id) {
+    public Book search(int id) {
         Session searchSession = SessionFactoryConfig.getInstance().getSession();
         Transaction searchTransaction = searchSession.beginTransaction();
         Book getBooks = searchSession.get(Book.class,id);
@@ -72,29 +72,17 @@ public class BookDAOImpl implements BookDAO {
     }
 
     @Override
-    public ObservableList<Book> loadAll() {
-        ObservableList<Book> allBookList = FXCollections.observableArrayList();
+    public List<Book> loadAll() {
         Session loadSession = SessionFactoryConfig.getInstance().getSession();
         CriteriaQuery<Book> criteriaQuery = loadSession.getCriteriaBuilder().createQuery(Book.class);
         criteriaQuery.from(Book.class);
-        List<Book> customersList = loadSession.createQuery(criteriaQuery).getResultList();
-        allBookList.setAll(customersList);
+        List<Book> books = loadSession.createQuery(criteriaQuery).getResultList();
+
         loadSession.close();
-        return allBookList;
+        return books;
     }
 
-    @Override
-    public ObservableList<Book> getAllBooks(String branch) {
-        ObservableList<Book> allBookList = FXCollections.observableArrayList();
-        try (Session session = SessionFactoryConfig.getInstance().getSession()) {
-            Query<Book> query = session.createQuery("FROM Book WHERE branch = :branch", Book.class);
-            query.setParameter("branch", branch);
-            allBookList.addAll(query.getResultList());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return allBookList;
-    }
+
 
     @Override
     public ObservableList<Book> searchBooks(String title) throws Exception {
@@ -126,5 +114,24 @@ public class BookDAOImpl implements BookDAO {
         updateTransaction.commit();
         updateSession.close();
         return true;
+    }
+
+    @Override
+    public Book searchByUsername(String bookTitle) {
+        try (Session session = SessionFactoryConfig.getInstance().getSession()) {
+            Query<Book> query = session.createQuery("FROM Book WHERE title = :title", Book.class);
+            query.setParameter("title", bookTitle);
+            Book result = query.getSingleResult();
+            session.close();
+            return result;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public void setSession(Session session) {
+        this.session = session;
     }
 }

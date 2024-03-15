@@ -15,62 +15,56 @@ public class BookBOImpl implements BookBO {
     private final BookDAO bookDAO = (BookDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.BOOK);
     @Override
     public boolean saveBook(BookDto dto) throws Exception {
-        return bookDAO.save(new Book(
-                dto.getBranch(),
-                dto.getAuthor(),
-                dto.getTitle(),
-                dto.getGenre(),
-                dto.getStatus()
-        ));
+        Book book = new Book();
+        book.setId(dto.getId());
+        book.setTitle(dto.getTitle());
+        book.setAuthor(dto.getAuthor());
+        book.setGenre(dto.getGenre());
+        book.setStatus(dto.getStatus());
+        book.setImageSrc(dto.getImageSrc());
+
+        return bookDAO.save(book);
     }
 
     @Override
-    public boolean updateBook(String id, BookDto dto) throws Exception {
-        return bookDAO.update(id, new Book(
-                dto.getBranch(),
-                dto.getTitle(),
-                dto.getAuthor(),
-                dto.getGenre(),
-                dto.getStatus()
-        ));
+    public boolean updateBook(int id, BookDto dto) throws Exception {
+        Book book = new Book();
+        book.setId(dto.getId());
+        book.setTitle(dto.getTitle());
+        book.setAuthor(dto.getAuthor());
+        book.setGenre(dto.getGenre());
+        book.setStatus(dto.getStatus());
+        book.setImageSrc(dto.getImageSrc());
+
+        return bookDAO.update(id, book);
     }
 
     @Override
-    public boolean deleteBook(String id) throws Exception {
+    public boolean deleteBook(int id) throws Exception {
         return bookDAO.delete(id);
     }
 
     @Override
-    public BookDto searchBook(String id) throws Exception {
+    public BookDto searchBook(int id) throws Exception {
         Book book = bookDAO.search(id);
         if (book != null){
             return new BookDto(
-                    book.getBranch(),
+                    book.getId(),
+                    book.getImageSrc(),
                     book.getTitle(),
                     book.getAuthor(),
                     book.getGenre(),
                     book.getStatus()
+
             );
         }
         return null;
     }
 
     @Override
-    public ObservableList<BookDto> getAllBooks(String branch) throws Exception {
-        List<Book> bookList = bookDAO.getAllBooks(branch);
-        List<BookDto> bookDTOS = new ArrayList<>();
-        for (Book book : bookList){
-            bookDTOS.add(new BookDto(
-                    book.getId(),
-                    book.getBranch(),
-                    book.getTitle(),
-                    book.getAuthor(),
-                    book.getGenre(),
-                    book.getStatus(),
-                    book.getDate()
-            ));
-        }
-        return FXCollections.observableArrayList(bookDTOS);
+    public List<Book> getAllBooks() throws Exception {
+        List<Book> bookList = bookDAO.loadAll();
+        return bookList;
     }
 
     @Override
@@ -80,12 +74,11 @@ public class BookBOImpl implements BookBO {
         for (Book book : bookList){
             bookDTOS.add(new BookDto(
                     book.getId(),
-                    book.getBranch(),
+                    book.getImageSrc(),
                     book.getTitle(),
                     book.getAuthor(),
                     book.getGenre(),
-                    book.getStatus(),
-                    book.getDate()
+                    book.getStatus()
             ));
         }
         return FXCollections.observableArrayList(bookDTOS);
@@ -98,12 +91,11 @@ public class BookBOImpl implements BookBO {
         for (Book book : bookList) {
             bookDTOS.add(new BookDto(
                     book.getId(),
-                    book.getBranch(),
+                    book.getImageSrc(),
                     book.getTitle(),
                     book.getAuthor(),
                     book.getGenre(),
-                    book.getStatus(),
-                    book.getDate()
+                    book.getStatus()
             ));
         }
         return FXCollections.observableArrayList(bookDTOS);
