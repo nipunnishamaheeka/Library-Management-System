@@ -1,7 +1,11 @@
 package lk.ijse.dao.custom.impl;
 
+import jakarta.persistence.criteria.CriteriaQuery;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import lk.ijse.dao.custom.CredentialsDAO;
 import lk.ijse.entity.Credentials;
+import lk.ijse.util.SessionFactoryConfig;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
@@ -44,7 +48,7 @@ public class CredentialsDAOImpl implements CredentialsDAO {
 
     @Override
     public List<Credentials> loadAll() throws Exception {
-        return session.createQuery("FROM Credentials").list();
+        return null;
 
     }
 
@@ -62,6 +66,19 @@ public class CredentialsDAOImpl implements CredentialsDAO {
         query.setParameter("name", username);
         return (Credentials) query.uniqueResult();
 
+    }
+
+    @Override
+    public List<Credentials> loadAll(boolean isAdmin) {
+        ObservableList<Credentials> credentials = FXCollections.observableArrayList();
+        try (Session session = SessionFactoryConfig.getInstance().getSession()) {
+            Query<Credentials> query = session.createQuery("FROM Credentials WHERE isAdmin = :isAdmin", Credentials.class);
+            query.setParameter("isAdmin", isAdmin);
+            credentials.addAll(query.getResultList());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return credentials;
     }
 
     @Override

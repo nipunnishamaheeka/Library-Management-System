@@ -17,17 +17,16 @@
       <Pane prefHeight="770.0" prefWidth="1190.0" styleClass="mainPane">
          <children>
             <Label layoutX="30.0" layoutY="20.0" styleClass="headLine" text="User Managment" />
-            <TableView layoutX="28.0" layoutY="150.0" prefHeight="606.0" prefWidth="1150.0">
+            <TableView fx:id="tblUser" layoutX="100.0" layoutY="150.0" prefHeight="606.0" prefWidth="990.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="Id" />
-                <TableColumn prefWidth="246.40000915527344" text="Location" />
-                  <TableColumn prefWidth="382.39996337890625" text="Mobile Number" />
-                  <TableColumn prefWidth="272.800048828125" text="E-mail" />
-                  <TableColumn minWidth="0.0" prefWidth="87.20001220703125" text="Action" />
-                  <TableColumn prefWidth="87.20001220703125" text="Action" />
+                <TableColumn fx:id="colId" prefWidth="87.99999237060547" text="Id" />
+                <TableColumn fx:id="colName" prefWidth="462.4000244140625" text="Name" />
+                  <TableColumn fx:id="colEmail" prefWidth="254.39996337890625" text="E-mail" />
+                  <TableColumn fx:id="colUpdate" minWidth="0.0" prefWidth="96.00006103515625" text="Action" />
+                  <TableColumn fx:id="colDelete" prefWidth="88.0001220703125" text="Delete" />
               </columns>
             </TableView>
-            <JFXButton layoutX="1074.0" layoutY="101.0" text="Add User" />
+            <JFXButton fx:id="btnAddUser" layoutX="1074.0" layoutY="101.0" onAction="#btnAddUserOnAction" text="Add User" />
             <HBox alignment="CENTER" layoutX="30.0" layoutY="99.0" prefHeight="38.0" prefWidth="280.0" spacing="3.0" styleClass="hbox">
                <children>
                   <ImageView fitHeight="40.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">

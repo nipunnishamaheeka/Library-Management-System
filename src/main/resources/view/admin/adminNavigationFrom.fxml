@@ -97,7 +97,7 @@
          <children>
             <ImageView fitHeight="71.0" fitWidth="78.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../assets/Logo%20Edit.png" />
+                  <Image url="@../../assets/Logo%20Edit.png" />
                </image>
                <cursor>
                   <Cursor fx:constant="HAND" />

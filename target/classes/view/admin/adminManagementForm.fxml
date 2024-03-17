@@ -45,17 +45,17 @@
                         </Label>
                      </children>
                   </Pane>
-                  <JFXButton layoutX="722.0" layoutY="54.0" prefHeight="30.0" prefWidth="88.0" text="Sign out" />
+                  <JFXButton layoutX="722.0" layoutY="54.0" onAction="#btnSignOutOnAction" prefHeight="30.0" prefWidth="88.0" text="Sign out" />
                </children>
             </Pane>
             <Pane layoutX="32.0" layoutY="233.0" prefHeight="2.0" prefWidth="1127.0" style="-fx-background-color: black; -fx-opacity: .2;" />
-            <TableView fixedCellSize="0.0" layoutX="22.0" layoutY="269.0" prefHeight="488.0" prefWidth="1155.0">
+            <TableView fx:id="tblAdmin" fixedCellSize="0.0" layoutX="101.0" layoutY="268.0" prefHeight="488.0" prefWidth="990.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="ID" />
-                <TableColumn prefWidth="180.0000457763672" text="Email" />
-                  <TableColumn prefWidth="212.79995727539062" text="Display Name" />
-                  <TableColumn prefWidth="279.99993896484375" text="Department" />
-                  <TableColumn prefWidth="162.40008544921875" text="Created Date" />
+                <TableColumn fx:id="colID" prefWidth="129.59997177124023" text="ID" />
+                <TableColumn fx:id="colEmail" prefWidth="306.3999786376953" text="Email" />
+                  <TableColumn fx:id="colName" prefWidth="329.5999755859375" text="Display Name" />
+                  <TableColumn fx:id="colUpdate" prefWidth="116.800048828125" text="Update" />
+                  <TableColumn fx:id="colDelete" prefWidth="107.2000732421875" text="Delete" />
               </columns>
             </TableView>
             <Pane layoutX="986.0" layoutY="24.0" prefHeight="43.0" prefWidth="182.0">
@@ -65,7 +65,7 @@
                         <Image url="@../../assets/user.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="49.0" layoutY="4.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="108.0" text="Add User" />
+                  <Button layoutX="49.0" layoutY="4.0" mnemonicParsing="false" onAction="#btnAddAdminOnAction" prefHeight="36.0" prefWidth="108.0" text="Add User" />
                </children>
             </Pane>
          </children>

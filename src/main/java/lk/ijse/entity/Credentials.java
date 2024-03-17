@@ -32,8 +32,8 @@ public class Credentials {
     private String imageSrc;
     private boolean isAdmin;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
-    private List<Transactions> transactions = new ArrayList<>();
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
+//    private List<Transactions> transactions = new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "user")
     private List<Branch> branches = new ArrayList<>();
