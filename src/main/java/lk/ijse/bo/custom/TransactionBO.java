@@ -5,7 +5,7 @@ import lk.ijse.bo.SuperBO;
 import lk.ijse.dto.TransactionDto;
 
 public interface TransactionBO extends SuperBO {
-    boolean saveTransaction(TransactionDto dto) throws Exception;
+    void saveTransaction(TransactionDto dto) throws Exception;
 
     boolean updateTransaction(String id,TransactionDto dto) throws Exception;
 

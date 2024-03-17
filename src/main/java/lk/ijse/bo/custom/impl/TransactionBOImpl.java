@@ -3,6 +3,7 @@ package lk.ijse.bo.custom.impl;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import lk.ijse.bo.custom.TransactionBO;
+import lk.ijse.controller.LoginFormController;
 import lk.ijse.dao.DAOFactory;
 import lk.ijse.dao.custom.BookDAO;
 import lk.ijse.dao.custom.CredentialsDAO;
@@ -26,43 +27,47 @@ public class TransactionBOImpl implements TransactionBO {
     private final TransactionDAO transactionDAO = (TransactionDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.TRANSACTION);
 
     @Override
-    public boolean saveTransaction(TransactionDto dto) throws Exception {
+    public void saveTransaction(TransactionDto dto) throws Exception {
         Session session = SessionFactoryConfig.getInstance().getSession();
-        credentialsDAO.setSession(session);
-        bookDAO.setSession(session);
-        transactionDAO.setSession(session);
+
         Transaction transaction = session.beginTransaction();
 
-        Credentials credentials = credentialsDAO.searchByUsername(dto.getUserName());
+        credentialsDAO.setSession(session);
+        Credentials credentials = credentialsDAO.search(LoginFormController.userID);
+        if(credentials!= null){
+            System.out.println(credentials);
+            bookDAO.setSession(session);
+            Book book = bookDAO.searchByUsername(dto.getBookTitle());
+            book.setStatus("Not Available");
 
-        Book book = bookDAO.searchByUsername(dto.getBookTitle());
-        book.setStatus("Not Available");
+            System.out.println(book);
+            transactionDAO.setSession(session);
 
-        Transactions transactions = new Transactions();
+            Transactions transactions = new Transactions();
 
-        transactions.setId(dto.getId());
-        transactions.setBranch(dto.getBookTitle());
-        transactions.setBorrowing(dto.getBorrowing());
-        transactions.setReturning(dto.getReturning());
-        transactions.setStatus(dto.getStatus());
-        transactions.setUser(credentials);
-        transactions.setBook(book);
+            transactions.setBookName(dto.getBookTitle());
+            transactions.setBorrowing(dto.getBorrowing());
+            transactions.setReturning(dto.getReturning());
+            transactions.setStatus(dto.getStatus());
+            transactions.setUser(credentials);
+            transactions.setBook(book);
 
 
-        credentials.getTransactions().add(transactions);
-        //System.out.println(book.getTransactions());
-        book.getTransactions().add(transactions);
+//            credentials.getTransactions().add(transactions);
+            //System.out.println(book.getTransactions());
+//            book.getTransactions().add(transactions);
 
-        credentialsDAO.save(credentials);
-        bookDAO.save(book);
+            credentialsDAO.save(credentials);
+            bookDAO.save(book);
 
-//        transactionDAO.setSession(session);
-        transactionDAO.save(transactions);
-        transaction.commit();
+            transactionDAO.save(transactions);
+            transaction.commit();
 
-        session.close();
+            session.close();
+        }
 
-        return false;
+
+
     }
 
     @Override
