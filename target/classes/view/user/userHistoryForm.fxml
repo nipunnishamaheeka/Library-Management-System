@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="770.0" prefWidth="1190.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.controller.user.UserHistoryFormController">
@@ -17,18 +18,15 @@
                         <Font name="Arial Bold" size="18.0" />
                     </font>
                 </Label>
-                <TableView layoutX="27.0" layoutY="124.0" prefHeight="637.0" prefWidth="1137.0">
-                    <columns>
-                        <TableColumn prefWidth="75.0" text="BookID" />
-                        <TableColumn prefWidth="106.39999389648438" text="Book Name" />
-                        <TableColumn prefWidth="159.19998168945312" text="Writer 1" />
-                        <TableColumn prefWidth="158.39996337890625" text="Writer 2" />
-                        <TableColumn prefWidth="158.4000244140625" text="Writer 3" />
-                        <TableColumn prefWidth="146.39996337890625" text="Author" />
-                        <TableColumn prefWidth="126.40008544921875" text="Borrow Date" />
-                  <TableColumn prefWidth="126.40008544921875" text="Return Date" />
-                    </columns>
-                </TableView>
+            <ScrollPane layoutX="105.0" layoutY="145.0" prefHeight="575.0" prefWidth="898.0" style="-fx-background-color: transparent;" stylesheets="@../../css/Scrool.css">
+               <content>
+                  <GridPane fx:id="bookContainer" prefHeight="0.0" prefWidth="0.0">
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+               </content>
+            </ScrollPane>
             </children>
         </Pane>
     </children>

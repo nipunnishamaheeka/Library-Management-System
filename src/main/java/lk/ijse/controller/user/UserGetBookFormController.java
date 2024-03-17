@@ -70,7 +70,7 @@ public class UserGetBookFormController {
     }
 
     public void initialize() throws Exception {
-        reload();
+
         borrowBook();
 
         recommendedBooks = books();
@@ -114,24 +114,7 @@ public class UserGetBookFormController {
     }
 
     private void borrowBook() {
-//        try {
-//            tblGetBook.setOnMouseClicked(event -> {
-//                BookDto selectedItem = tblGetBook.getSelectionModel().getSelectedItem();
-//                if (selectedItem != null) {
-//                    ButtonType ok = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
-//                    ButtonType no = new ButtonType("NO", ButtonBar.ButtonData.CANCEL_CLOSE);
-//
-//                    Optional<ButtonType> result = new Alert(Alert.AlertType.INFORMATION, "Are you sure want to borrow this Book?", ok, no).showAndWait();
-//                    if (result.orElse(no) == ok) {
-//                        getBook(selectedItem.getTitle());
-//                        updateStatus(selectedItem.getId());
-//                        reload();
-//                    }
-//                }
-//            });
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+
     }
 
     private void getBook(String title) {
@@ -168,36 +151,20 @@ public class UserGetBookFormController {
 //        }
     }
 
-    //    private void setCellValueFactory() {
-//        colBookID.setCellValueFactory(new PropertyValueFactory<>("id"));
-//        colBranch.setCellValueFactory(new PropertyValueFactory<>("branch"));
-//        colBookName.setCellValueFactory(new PropertyValueFactory<>("title"));
-//        colAuthor.setCellValueFactory(new PropertyValueFactory<>("author"));
-//        colGenure.setCellValueFactory(new PropertyValueFactory<>("genre"));
-//        colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
-//        colDate.setCellValueFactory(new PropertyValueFactory<>("dateTime"));
-//    }
     private void loadAllBooks() {
+
+    }
+
+    private void updateStatus(int id) {
 //        try {
-//            tblGetBook.setItems(bookBO.loadAllBooks());
+//            String status = "Not Available";
+//            bookBO.updateStatus(id, status);
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
     }
 
-    private void updateStatus(int id) {
-        try {
-            String status = "Not Available";
-            bookBO.updateStatus(id, status);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
-    private void reload() {
-        loadAllBooks();
-//        setCellValueFactory();
-    }
 
     public void btnEditOnAction(ActionEvent actionEvent) {
         navigationPane.getChildren().clear();
