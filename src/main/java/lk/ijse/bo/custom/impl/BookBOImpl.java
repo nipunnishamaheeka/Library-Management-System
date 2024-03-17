@@ -18,7 +18,7 @@ public class BookBOImpl implements BookBO {
     private Session session;
     private final BookDAO bookDAO = (BookDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.BOOK);
     @Override
-    public boolean saveBook(BookDto dto) throws Exception {
+    public boolean save(BookDto dto) throws Exception {
         session = SessionFactoryConfig.getInstance().getSession();
         Book book = new Book();
         book.setId(dto.getId());
@@ -58,7 +58,7 @@ public class BookBOImpl implements BookBO {
     }
 
     @Override
-    public boolean deleteBook(int id) throws Exception {
+    public void delete(int id) throws Exception {
 
 
         session = SessionFactoryConfig.getInstance().getSession();
@@ -68,7 +68,7 @@ public class BookBOImpl implements BookBO {
         Transaction transaction = session.beginTransaction();
         transaction.commit();
         session.close();
-        return true;
+
     }
 
     @Override
@@ -95,12 +95,25 @@ public class BookBOImpl implements BookBO {
 
     @Override
     public List<Book> getAllBooks() throws Exception {
-        Session session = SessionFactoryConfig.getInstance().getSession();
-        bookDAO.setSession(session);
-        List<Book> bookList = bookDAO.loadAll();
+        try {
 
-        session.close();
-        return bookList;
+
+            Session session = SessionFactoryConfig.getInstance().getSession();
+            bookDAO.setSession(session);
+            List<Book> bookList = bookDAO.loadAll();
+            System.out.println(bookList);
+
+            session.close();
+            return bookList;
+        }catch (Exception e){
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    @Override
+    public List<BookDto> getAll() throws Exception {
+        return null;
     }
 
     @Override

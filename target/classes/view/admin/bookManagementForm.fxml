@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
@@ -38,7 +39,7 @@
                                     <Font name="Arial Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField prefHeight="26.0" prefWidth="582.0" />
+                              <TextField fx:id="txtName" prefHeight="26.0" prefWidth="582.0" />
                            </children>
                            <padding>
                               <Insets left="10.0" right="10.0" />
@@ -51,20 +52,7 @@
                                     <Font name="Arial Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField prefHeight="26.0" prefWidth="582.0" />
-                           </children>
-                           <padding>
-                              <Insets left="10.0" right="10.0" />
-                           </padding>
-                        </VBox>
-                        <VBox prefHeight="61.0" prefWidth="684.0">
-                           <children>
-                              <Label text="* Book Count">
-                                 <font>
-                                    <Font name="Arial Bold" size="14.0" />
-                                 </font>
-                              </Label>
-                              <TextField prefHeight="26.0" prefWidth="582.0" />
+                              <TextField fx:id="txtAuthor" prefHeight="26.0" prefWidth="582.0" />
                            </children>
                            <padding>
                               <Insets left="10.0" right="10.0" />
@@ -81,30 +69,22 @@
                      <children>
                         <VBox prefHeight="61.0" prefWidth="684.0">
                            <children>
-                              <Label text="* Book Code">
+                              <Label text="* Genre">
                                  <font>
                                     <Font name="Arial Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField prefHeight="26.0" prefWidth="582.0" />
+                              <JFXComboBox fx:id="cmbGenre" prefHeight="26.0" prefWidth="534.0" />
                            </children>
                            <padding>
                               <Insets left="10.0" right="10.0" />
                            </padding>
                         </VBox>
-                        <VBox prefHeight="61.0" prefWidth="684.0">
-                           <children>
-                              <Label text="* Type">
-                                 <font>
-                                    <Font name="Arial Bold" size="14.0" />
-                                 </font>
-                              </Label>
-                              <TextField prefHeight="26.0" prefWidth="582.0" />
-                           </children>
-                           <padding>
-                              <Insets left="10.0" right="10.0" />
-                           </padding>
-                        </VBox>
+                        <JFXButton fx:id="btnUploadPhoto" onAction="#btnChoosePhotoOnAction" prefHeight="35.0" prefWidth="103.0" style="-fx-background-color: Blue;" text="Choose Photo">
+                           <VBox.margin>
+                              <Insets left="420.0" top="5.0" />
+                           </VBox.margin>
+                        </JFXButton>
                      </children>
                   </VBox>
                </children>
@@ -113,18 +93,17 @@
                <children>
                   <JFXButton text="Cancel" />
                   <JFXButton text="Save &amp; New" />
-                  <JFXButton text="Save" />
+                  <JFXButton onAction="#txtSaveOnAction" text="Save" />
                </children>
             </HBox>
-            <TableView layoutX="36.0" layoutY="440.0" prefHeight="323.0" prefWidth="1119.0">
+            <TableView fx:id="tblBook" layoutX="36.0" layoutY="440.0" prefHeight="323.0" prefWidth="1119.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="Book Code" />
-                <TableColumn prefWidth="248.00001525878906" text="Name" />
-                  <TableColumn prefWidth="209.60003662109375" text="Author" />
+                <TableColumn fx:id="colID" prefWidth="75.0" text="Book Code" />
+                <TableColumn fx:id="colName" prefWidth="248.00001525878906" text="Name" />
+                  <TableColumn fx:id="colAuthor" prefWidth="209.60003662109375" text="Author" />
                   <TableColumn prefWidth="209.60003662109375" text="Type" />
-                  <TableColumn prefWidth="118.4000244140625" text="Available" />
-                  <TableColumn prefWidth="109.60009765625" text="Count" />
-                  <TableColumn prefWidth="109.60009765625" text="Remove" />
+                  <TableColumn fx:id="colStatus" prefWidth="118.4000244140625" text="Available" />
+                  <TableColumn fx:id="colDelete" prefWidth="109.60009765625" text="Remove" />
               </columns>
             </TableView>
          </children>

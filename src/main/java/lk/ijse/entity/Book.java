@@ -34,7 +34,7 @@ public class Book {
     private String genre;
     private String status;
 
-    @OneToMany(cascade = CascadeType.ALL , fetch = FetchType.LAZY , mappedBy = "book")
-    private List<Transactions> transactions=new ArrayList<>();
+//    @OneToMany(cascade = CascadeType.ALL , fetch = FetchType.LAZY , mappedBy = "book")
+//    private List<Transactions> transactions=new ArrayList<>();
 
 }

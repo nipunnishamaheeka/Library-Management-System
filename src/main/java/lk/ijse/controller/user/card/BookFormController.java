@@ -19,6 +19,7 @@ import lk.ijse.entity.Book;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class BookFormController {
 
@@ -65,8 +66,12 @@ public class BookFormController {
         transactionDto.setBookTitle(bookName.getText());
         transactionDto.setId(0);
         transactionDto.setStatus("Borrowed");
-        transactionDto.setBorrowing(null);
-        transactionDto.setReturning(timestamp);
+        transactionDto.setBorrowing(timestamp);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(timestamp.getTime());
+        calendar.add(Calendar.WEEK_OF_YEAR,2);
+        Timestamp newTimestamp = new Timestamp(calendar.getTimeInMillis());
+        transactionDto.setReturning(newTimestamp);
 
         this.transactionDto=transactionDto;
 
