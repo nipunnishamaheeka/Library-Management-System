@@ -36,7 +36,7 @@
                         <Label styleClass="underText" text="Hay! Enter Your Details to Login to your an account." />
                      </children>
                   </VBox>
-                  <VBox layoutX="117.0" layoutY="178.0" prefHeight="200.0" prefWidth="305.0" spacing="20.0">
+                  <VBox alignment="TOP_RIGHT" layoutX="117.0" layoutY="178.0" prefHeight="124.0" prefWidth="305.0" spacing="20.0">
                      <children>
                         <Pane prefHeight="45.0" prefWidth="305.0" styleClass="fillPane">
                            <children>
@@ -78,7 +78,12 @@
                   </VBox>
                   <JFXButton fx:id="btnLogin" layoutX="166.0" layoutY="412.0" onAction="#btnLoginOnAction" prefHeight="36.0" prefWidth="207.0" text="Login" />
                   <Label fx:id="lblWarning" layoutX="117.0" layoutY="369.0" textFill="RED" />
-                  <Label layoutX="117.0" layoutY="456.0" text="Forgot Your Password?" />
+                  <ImageView fitHeight="24.0" fitWidth="28.0" layoutX="393.0" layoutY="256.0" opacity="0.34" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/eye.png" />
+                     </image>
+                  </ImageView>
+
                </children>
             </Pane>
          </children>

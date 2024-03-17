@@ -103,8 +103,7 @@
                      </children>
                   </VBox>
                   <JFXButton fx:id="btnSignUP" layoutX="166.0" layoutY="412.0" onAction="#btnSignUpOnAction" prefHeight="36.0" prefWidth="207.0" text="Sign Up" />
-                  <Label layoutX="117.0" layoutY="369.0" text="Enter Your" />
-                  <Label layoutX="117.0" layoutY="456.0" text="Forgot Your Password?" />
+                  <Label layoutX="117.0" layoutY="369.0" />
                </children>
             </Pane>
          </children>

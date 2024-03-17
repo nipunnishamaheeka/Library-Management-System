@@ -37,42 +37,11 @@ public class LoginFormController {
     private final CredentialsBO credentialsBO = (CredentialsBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.CREDENTIALS);
     @FXML
   void btnSignUpOnAction(ActionEvent actionEvent)  {
-//        try {
-//            LogInPane.getChildren().clear();
-//            LogInPane.getChildren().add(FXMLLoader.load(this.getClass().getResource("/view/signup.fxml")));
-//
-//            FadeTransition fadeIn = new FadeTransition(Duration.millis(500), LogInPane);
-//            fadeIn.setFromValue(0.0);
-//            fadeIn.setToValue(1.0);
-//            fadeIn.play();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-        Navigation.switchNavigation("view/signup.fxml", actionEvent);
+
+        Navigation.switchNavigation("/view/signup.fxml", actionEvent);
 
     }
 
-//    public void btnLoginOnAction(ActionEvent actionEvent) throws IOException {
-//        try {
-//            CredentialsDto credentialsDto = credentialsBO.searchUser(txtUserName.getText());
-//            System.out.println(credentialsDto);
-//
-//            if (credentialsDto != null) {
-//                if (credentialsDto.getEmail() != null && txtPasswordHide.getText().equals(credentialsDto.getPassword())) {
-//                    userID=credentialsDto.getUid();
-//                    if (credentialsDto.isAdmin()) {
-//                        Navigation.switchNavigation("/view/admin/adminNavigationFrom.fxml", actionEvent);
-//                    } else {
-//                        Navigation.switchNavigation("/view/user/userNavigationForm.fxml", actionEvent);
-//                    }
-//                }
-//            } else {
-//                lblWarning.setText("Invalid Username or Password !");
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
 public void btnLoginOnAction(ActionEvent actionEvent) throws IOException {
     try {
         String username = txtUserName.getText();
@@ -122,27 +91,6 @@ public void btnLoginOnAction(ActionEvent actionEvent) throws IOException {
         return true; // Username and password are valid
     }
 
-//    private void searchUser(){
-//        String username = txtUserName.getText();
-//        String password = txtPasswordHide.getText();
-//        try {
-//            CredentialsDto credentials = credentialsBO.searchUser(username);
-//            if (credentials == null || !credentials.getPassword().equals(password)){
-//                new Alert(Alert.AlertType.WARNING,"Incorrect username or password").show();
-//            } else {
-//                member=username;
-//                LogInPane.getChildren().clear();
-//                //LogInPane.getChildren().add(FXMLLoader.load(this.getClass().getResource("/view/userNavigationForm.fxml")));
-//                LogInPane.getChildren().add(FXMLLoader.load(this.getClass().getResource("/view/admin/adminNavigationFrom.fxml")));
-//
-//                FadeTransition fadeIn = new FadeTransition(Duration.millis(500), LogInPane);
-//                fadeIn.setFromValue(0.0);
-//                fadeIn.setToValue(1.0);
-//                fadeIn.play();
-//            }
-//        } catch (Exception e) {
-//            new Alert(Alert.AlertType.WARNING,"Incorrect username or password").show();
-//        }
-//    }
+
 
 }
