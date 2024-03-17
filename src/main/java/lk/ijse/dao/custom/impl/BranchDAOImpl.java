@@ -38,8 +38,12 @@ public class BranchDAOImpl implements BranchDAO {
 //        updateTransaction.commit();
 //        updateSession.close();
 //        return true;
-        session.update(dto);
-        return false;
+        try {
+            session.update(dto);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
      }
 
     @Override

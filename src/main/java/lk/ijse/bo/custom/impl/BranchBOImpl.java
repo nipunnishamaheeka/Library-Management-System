@@ -14,6 +14,7 @@ import org.hibernate.Transaction;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class BranchBOImpl implements BranchBO {
     private Session session;
@@ -27,20 +28,18 @@ private final CredentialsDAO credentialsDAO = (CredentialsDAO) DAOFactory.getDao
         session = SessionFactoryConfig.getInstance().getSession();
         branchDAO.setSession(session);
         List<Branch> all = branchDAO.loadAll();
-        List<BranchDto> branchDtos = new ArrayList<>();
-        for (Branch branch : all) {
-            branchDtos.add(new BranchDto(
-                    branch.getId(),
-                    branch.getName(),
-                    branch.getLocation(),
-                    branch.getEmail()));
-        }
+        List<BranchDto> branchDtos = all.stream().map(branch -> new BranchDto(
+                branch.getId(),
+                branch.getName(),
+                branch.getLocation(),
+                branch.getEmail()
+        )).collect(Collectors.toList());
         session.close();
         return branchDtos;
     }
 
     @Override
-    public int save(BranchDto branchDto) throws Exception {
+    public boolean save(BranchDto branchDto) throws Exception {
         session = SessionFactoryConfig.getInstance().getSession();
         branchDAO.setSession(session);
         credentialsDAO.setSession(session);
@@ -56,15 +55,11 @@ private final CredentialsDAO credentialsDAO = (CredentialsDAO) DAOFactory.getDao
         transaction.commit();
         session.close();
 
-        if (save) {
-            return 1;
-        } else {
-            return 0;
-        }
+        return save;
     }
 
     @Override
-    public void update(BranchDto branchDto) throws Exception {
+    public boolean update(BranchDto branchDto) throws Exception {
         session = SessionFactoryConfig.getInstance().getSession();
         branchDAO.setSession(session);
         transaction = session.beginTransaction();
@@ -73,11 +68,12 @@ private final CredentialsDAO credentialsDAO = (CredentialsDAO) DAOFactory.getDao
         branch.setLocation(branchDto.getLocation());
         branch.setEmail(branchDto.getEmail());
 
-        branchDAO.update(branch.getId(), branch);
+        boolean update = branchDAO.update(branch.getId(), branch);
 
         transaction.commit();
         session.close();
 
+        return update;
     }
 
     @Override

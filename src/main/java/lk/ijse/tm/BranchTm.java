@@ -1,4 +1,4 @@
-package lk.ijse.dto;
+package lk.ijse.tm;
 
 import javafx.scene.control.Button;
 import lombok.AllArgsConstructor;
@@ -10,9 +10,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @Data
 @ToString
-public class BranchDto {
+public class BranchTm {
     private int id;
     private String name;
     private String location;
     private String email;
+    private Button deleteButton;
 }

@@ -8,9 +8,9 @@ import java.util.List;
 public interface BranchBO extends SuperBO {
     List<BranchDto> getAll() throws Exception;
 
-    int save(BranchDto branchDto) throws Exception;
+    boolean save(BranchDto branchDto) throws Exception;
 
-    void update(BranchDto branchDto) throws Exception;
+    boolean update(BranchDto branchDto) throws Exception;
 
     void delete(int id) throws Exception;
 }

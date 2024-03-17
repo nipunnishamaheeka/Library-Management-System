@@ -27,7 +27,7 @@
                   </Label>
                </children>
             </Pane>
-            <HBox layoutX="36.0" layoutY="140.0" prefHeight="275.0" prefWidth="1119.0" spacing="30.0">
+            <HBox layoutX="36.0" layoutY="140.0" prefHeight="228.0" prefWidth="1119.0" spacing="30.0">
                <children>
                   <VBox prefHeight="100.0" prefWidth="538.0">
                      <children>
@@ -38,7 +38,7 @@
                                     <Font name="Arial Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField prefHeight="26.0" prefWidth="582.0" />
+                              <TextField fx:id="txtName" prefHeight="26.0" prefWidth="582.0" />
                            </children>
                            <padding>
                               <Insets left="10.0" right="10.0" />
@@ -46,38 +46,12 @@
                         </VBox>
                         <VBox prefHeight="61.0" prefWidth="684.0">
                            <children>
-                              <Label text="* Account">
+                              <Label text="* E -  Mail">
                                  <font>
                                     <Font name="Arial Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField prefHeight="26.0" prefWidth="582.0" />
-                           </children>
-                           <padding>
-                              <Insets left="10.0" right="10.0" />
-                           </padding>
-                        </VBox>
-                        <VBox prefHeight="61.0" prefWidth="684.0">
-                           <children>
-                              <Label text="* Branch Manager">
-                                 <font>
-                                    <Font name="Arial Bold" size="14.0" />
-                                 </font>
-                              </Label>
-                              <TextField prefHeight="26.0" prefWidth="582.0" />
-                           </children>
-                           <padding>
-                              <Insets left="10.0" right="10.0" />
-                           </padding>
-                        </VBox>
-                        <VBox prefHeight="61.0" prefWidth="684.0">
-                           <children>
-                              <Label text="* Start Date">
-                                 <font>
-                                    <Font name="Arial Bold" size="14.0" />
-                                 </font>
-                              </Label>
-                              <TextField prefHeight="26.0" prefWidth="582.0" />
+                              <TextField fx:id="txtEmail" prefHeight="26.0" prefWidth="582.0" />
                            </children>
                            <padding>
                               <Insets left="10.0" right="10.0" />
@@ -107,38 +81,12 @@
                         </VBox>
                         <VBox prefHeight="61.0" prefWidth="684.0">
                            <children>
-                              <Label text="* Type">
+                              <Label text="* Location">
                                  <font>
                                     <Font name="Arial Bold" size="14.0" />
                                  </font>
                               </Label>
-                              <TextField prefHeight="26.0" prefWidth="582.0" />
-                           </children>
-                           <padding>
-                              <Insets left="10.0" right="10.0" />
-                           </padding>
-                        </VBox>
-                        <VBox prefHeight="61.0" prefWidth="684.0">
-                           <children>
-                              <Label text="* Operational State">
-                                 <font>
-                                    <Font name="Arial Bold" size="14.0" />
-                                 </font>
-                              </Label>
-                              <TextField prefHeight="26.0" prefWidth="582.0" />
-                           </children>
-                           <padding>
-                              <Insets left="10.0" right="10.0" />
-                           </padding>
-                        </VBox>
-                        <VBox prefHeight="61.0" prefWidth="684.0">
-                           <children>
-                              <Label text="* End Date">
-                                 <font>
-                                    <Font name="Arial Bold" size="14.0" />
-                                 </font>
-                              </Label>
-                              <TextField prefHeight="26.0" prefWidth="582.0" />
+                              <TextField fx:id="txtLocation" prefHeight="26.0" prefWidth="582.0" />
                            </children>
                            <padding>
                               <Insets left="10.0" right="10.0" />
@@ -148,23 +96,24 @@
                   </VBox>
                </children>
             </HBox>
-            <HBox alignment="CENTER" layoutX="431.0" layoutY="419.0" prefHeight="49.0" prefWidth="328.0" spacing="20.0">
+            <HBox alignment="CENTER" layoutX="428.0" layoutY="368.0" prefHeight="49.0" prefWidth="328.0" spacing="20.0">
                <children>
-                  <JFXButton text="Cancel" />
+                  <JFXButton fx:id="btnCancel" onAction="#btnCancelOnAction" text="Cancel" />
                   <JFXButton text="Save &amp; New" />
-                  <JFXButton text="Save" />
+                  <JFXButton fx:id="btnSave" onAction="#btnSaveOnAction" text="Save" />
+                  <JFXButton fx:id="btnUpdate" onAction="#btnUpdateOnAction" text="Update" />
                </children>
             </HBox>
-            <TableView layoutX="23.0" layoutY="468.0" prefHeight="288.0" prefWidth="1138.0">
+            <TableView fx:id="tblBranch" layoutX="23.0" layoutY="414.0" prefHeight="342.0" prefWidth="1138.0">
               <columns>
-                <TableColumn prefWidth="100.79998397827148" text="Branch Code" />
-                <TableColumn prefWidth="175.1999969482422" text="Name" />
-                  <TableColumn prefWidth="175.1999969482422" text="Account" />
-                  <TableColumn prefWidth="175.1999969482422" text="Type" />
-                  <TableColumn prefWidth="175.1999969482422" text="Branch Manager" />
-                  <TableColumn prefWidth="130.40008544921875" text="Operatinal State" />
-                  <TableColumn prefWidth="95.2000732421875" text="Date" />
-                  <TableColumn prefWidth="95.2000732421875" text="Remove" />
+                <TableColumn fx:id="colID" prefWidth="100.79998397827148" text="Branch Code" />
+                <TableColumn fx:id="colName" prefWidth="223.1999969482422" text="Name" />
+                  <TableColumn fx:id="colEmail" prefWidth="217.60003662109375" text="E - mail" />
+                  <TableColumn fx:id="colLocation" prefWidth="169.5999755859375" text="Location" />
+                  <TableColumn fx:id="colManager" prefWidth="156.0" text="Branch Manager" />
+                  <TableColumn fx:id="colDate" prefWidth="125.5999755859375" text="Date" />
+                  <TableColumn fx:id="colEdit" prefWidth="73.60003662109375" text="Edit" />
+                  <TableColumn fx:id="colDelete" prefWidth="71.2000732421875" text="Remove" />
               </columns>
             </TableView>
          </children>
